@@ -183,14 +183,13 @@ label prologday1:
     
     #СПРАЙТЫ С ТЯНКОЙ И МУЖИКОМ
     
-    
     show tyan close with Dissolve(0.5)
     extend " В, не по сезону, прохладной курточке."
     $ set_mode_nvl()
       
     '''Такая красивая и одна? '''with Dissolve(0.5) 
     show macho at macho_vniz with Dissolve(0.5)
-    extend '''А, нет! {w}Вот рядом и хахаль нарисовался.'''
+    extend '''А, нет! {w} Вот рядом и хахаль нарисовался.'''
     th "Лысый, с подбитой губой."
     th "Что она в нём нашла? Даже обидно за несчастную."
     th "Сейчас просто дерётся, а через пару месяцев и её поколачивать будет."
@@ -732,7 +731,7 @@ label day_1_1_su:
     gg "Ма… ма… ма…"
     un "Что?"
     uv "Он хочет сказать, что его зовут Максим. {w}Можно просто Макс. {w}Даже лучше. Сама видишь. Заика…."
-    show un normal pioneer with dspr
+    show un smile2 pioneer with dspr
     un "Ой! Ну это ничего. Ты главное не переживай.{w} Я вот в детстве картавила."
     uv "А я шепелявила. {w}Как у нас много общего! {w}Правда здорово, Максик?"
     un "Но я потом научилась говорить правильно."
@@ -743,6 +742,7 @@ label day_1_1_su:
     "Юля взяла всё ещё растерянную Лену за руки и стала прыгать."
     uv "А теперь скажи быстро: ''Наши поезда - самые поездатые поезда в мире…'' {w}Хотя нет. Это слишком сложная. {w}Давай вот эту: ''Из преподвыперта зайчик преподвыпернулся''"
     gg "Из преподвыперта самый поездатый зайчик… тьфу ты. {w}Задурила голову! {w}Ма… Лена, мы просто хотели спросить, где тут начальство? {w}Чтоб оформить…  ся."
+    show un normal pioneer with dspr
     un "А-а-а… ну администрация там.{w} Только она закрыта. {w}Вам лучше к Ольге Дмитриевне. {w}Она старшая вожатая.{w} Это третий домик, если идти по той дороге. Вы его сразу узнаете, рядом куст сирени растёт."
     uv "Спасибо тебе огромное. {w}Ты наша спасительница."
     show un smile pioneer with dspr
@@ -851,6 +851,7 @@ label day_1_1_su:
     gg "Ну мы с дедом как-то самогонный аппарат чинили…"
     show sl surprise pioneer with dspr
     sl "Что?"
+    "Юля наступила мне на ногу. Явно специально."
     uv "Максик шутит. А что там?"
     show sl normal pioneer with dspr
     sl "А там запасной выход из лагеря. Но он всегда открыт. Так что можно по грибы ходить."
@@ -890,7 +891,7 @@ label day_1_1_su:
     show uv rage with dspr
     uv "Конечно о кроватях, извращенец!"
     gg "Да ладно, чё ты? Я просто спросил."
-    "(спрайт обычная Юля)"
+    show uv normal with dspr
     uv "Спросил он, ага.{w} Кажется я поняла, в чём твоя проблема? Ты везде видишь пошлый подтекст."
     gg "Кто сказал, что это проблема?"
     uv "Я сказала! Этого мало?"
@@ -903,9 +904,12 @@ label day_1_1_su:
     "Я промолчал, потому что весомых аргументов остаться в домике, у меня не было."
     th "А причина ещё пообщаться со Славей показалась мне жалкой…"
     th "Озвучь я её и Юлька станет надо мной потешаться. И правильно сделает."
-    "(фон перед домом)"
-    "(фон тропинки лагеря)"
-    "(фон главная площадь)"
+    show int_extra_house_dayy at truecenter with dissolve
+    show uv normal at right
+    show ext_square_day at truecenter with dissolve
+    show uv normal at right
+
+
     uv "Куда теперь?"
     "Я прочитал надпись на табличке:"
     gg "Кружки. Пирс. Противная площадка."
@@ -932,9 +936,9 @@ label pier_meet_lena:
     uv "А кружки? Чем театральный плох? Хвостик и ушки я объясню таким вот реквизитом."
     gg "Это сработает, только если они репку ставят, или кота в сапогах. Или любой другой спектакль, где есть котики."
     gg "А если какую-нибудь Ромео и Джульетту? Как ты объяснишь появление хвостатого в старой Вероне?"
-    uv "Авторская постановка. Вместо враждующих человеческих семейств там будут кошки и собаки.""
+    uv "Авторская постановка. Вместо враждующих человеческих семейств там будут кошки и собаки."
     gg "Ага. Мяутекки и Гавкулетти."
-    (спрайт смеющаяся Юля)
+    show uv laugh at right
     uv "Уже лучше. Я про твои шутки."
 
     scene bg ext_boathouse_day with dissolve
@@ -946,13 +950,13 @@ label pier_meet_lena:
     gg "Зачем?"
     uv "Поболтаем."
 
-    show un scared pioneer with dspr
+    show un surprise pioneer with dspr
 
     uv "Привет, Лена! Как дела?"
     un "П-п-привет. Ещё раз."
     uv "А мы уже заселились. В последний незанятый домик. Представляешь, как здорово?"
 
-    show un normal pioneer with dspr
+    show un smile2 pioneer with dspr
 
     un "Да."
     uv "Приходи к нам в гости."
@@ -978,7 +982,7 @@ label pier_meet_lena:
     gg "Можно, попросить в столовой…"
     uv "Так и поступим! А ты что тут делаешь?"
 
-    show un scared pioneer with dspr
+    show un shy pioneer with dspr
 
     un "Я? Да ничего. Просто… гуляю."
     uv "Просто так? Без цели? Это же скучно! Давайте гулять вместе. И не просто гулять, а что-нибудь делать. Хотя бы цветы собирать!"
@@ -1008,13 +1012,13 @@ label pier_meet_lena:
 
     uv "Ой, как здорово!"
 
-    show un surprise pioneer with dspr
+    show un shy pioneer with dspr
 
     un "Правда?"
     uv "Максик, правда здорово?"
     gg "Да… Тебе… э-э-э… очень идёт."
 
-    show un shy pioneer with dspr
+    show un smile3 pioneer with dspr
 
     un "Спасибо."
 
@@ -1086,7 +1090,8 @@ label clubs_meet_miku:
 
     uv "Максим играет на гитаре. Но только когда его никто не слышит. {w} Стесняется. Даже во двор гитару никогда не брал или на костёр."
     "Откуда она про это знает?"
-    mi "Как здорово.{w} Что играет, а не что стесняется. Что стесняется - не очень здорово.{w} Я, если честно, тоже стеснялась когда начинала. А у нас после первого года в музыкальной школе выступление было. Я так волновалась, что забыла поклониться. Вышла и сразу пошла к пианино, чтобы сыграть.{w} Мне, правда, тогда всего восемь лет было. {w} А чём это я? Ах, да! Максим сыграй нам что-нибудь. {w} Вот. Держи акустику.{w} Я её только сегодня настраивала. Точнее перенастроила шестую струну. Я её вчера спустила в дробь д, чтобы одну песенку сыграть и забыла подтянуть."
+    mi "Как здорово.{w} Что играет, а не что стесняется. Что стесняется - не очень здорово.{w} Я, если честно, тоже стеснялась когда начинала. А у нас после первого года в музыкальной школе выступление было. Я так волновалась, что забыла поклониться. Вышла и сразу пошла к пианино, чтобы сыграть.{w} Мне, правда, тогда всего восемь лет было."
+    mi "А чём это я? Ах, да! Максим сыграй нам что-нибудь. {w} Вот. Держи акустику.{w} Я её только сегодня настраивала. Точнее перенастроила шестую струну. Я её вчера спустила в дробь д, чтобы одну песенку сыграть и забыла подтянуть."
 
     "Пока я пытался переварить этот поток сознания меня усадили на стул и вручили акустическую гитару."
 
@@ -1095,7 +1100,7 @@ label clubs_meet_miku:
     gg "Я, если честно, давно не играл."
     mi "Не важно. Главное, чтоб руки помнили. {w} Я тоже иногда переживаю, что всё забыла, а ака возьму инструмент в руки - так сразу всё вспоминаю. {w}Главное начать, а там песня сама…"
 
-    play sound sfx_knocking_door_2
+    play sound sfx_dinner_horn_processed
 
     play music music_list["timid_girl"] fadein 2
 
@@ -1175,7 +1180,7 @@ label dining_hall_scene:
     us "Ты рифмуешь, как поэт."
     uv "И отделяю мух от котлет."
 
-    show us surprise pioneer with dspr
+    show us surp1 pioneer with dspr
 
     us "А причём тут мухи?"
     uv "А потому что мы - Мухины. Ха-ха-ха… Я - Юля. Это вот - Максим."
@@ -1200,7 +1205,7 @@ label dining_hall_scene:
     us "Правда?"
     gg "Вроде того. Но руки лучше помыть."
 
-    show us surprise pioneer with dspr
+    show us surp2 pioneer with dspr
 
     "Я посмотрел на Юлю. Она лизала тыльную сторону своей ладони."
     uv "Что? Я тоже решила умыться."
@@ -1215,7 +1220,7 @@ label dining_hall_scene:
 
     play music music_list["always_ready"] fadein 2
 
-    show us scared pioneer with dspr
+    show us dontlike pioneer with dspr
 
     us "Ой! Панамка пришла. {w} Сейчас кому-то влетит…"
     gg "Панамка?"
@@ -1225,7 +1230,7 @@ label dining_hall_scene:
 
     mt "Советова! Опять безобразничаешь?"
 
-    show us surprise pioneer with dspr
+    show us surp3 pioneer with dspr
 
     us "Что я сделала? Это не я. Я больше не буду!"
     mt "Я это уже слышала. И не собираюсь…"
@@ -1240,12 +1245,12 @@ label dining_hall_scene:
 
     mt "Кто-то напроказничал."
 
-    show us upset pioneer with dspr
+    show us sad pioneer with dspr
 
     us "А что сразу я. Мало ли кто мог ту табличку испортить?"
     mt "Какую табличку? Ты о чём? {w} Я про Серёжины вещи, которые ты стащила, пока он мылся."
 
-    show us surprise pioneer with dspr
+    show us surp2 pioneer with dspr
 
     us "Вещи? Какие вещи? Ничего не знаю. У меня алиби."
 
@@ -1253,7 +1258,7 @@ label dining_hall_scene:
 
     mt "Ты мне зубы не заговаривай.{w} Тут только одна хулиганка, способная на это.{w} Будешь дежурить после обеда."
 
-    show us upset pioneer with dspr
+    show us sad pioneer with dspr
 
     us "Опять?"
 
@@ -1284,6 +1289,9 @@ label dining_hall_scene:
         show mt angry pioneer with dspr
 
         mt "Цыц. Сперва про табличку расскажи."
+        
+        show us shy2 pioneer with dspr
+
         us "Что рассказывать? Я просто пошутила."
         mt "Вот и ответишь за свою шутку."
 
@@ -1340,7 +1348,7 @@ label dining_hall_scene:
 
         hide mt with dissolve
 
-        play music music_list["feeling_good"] fadein 2
+        play music music_list["everyday_theme"] fadein 2
 
         uv "Ну пошли переодеваться"
         gg "Угу."
@@ -1350,8 +1358,7 @@ label dining_hall_scene:
 
         scene bg ext_dining_hall_away_day with dissolve
         scene bg ext_square_day with dissolve
-        scene bg ext_houses_day with dissolve
-        scene bg ext_house_of_ggs_day with dissolve
+        scene ext_house_of_ggs_day with dissolve
 
         gg "Давай ты первая?"
         uv "Первая - что?"
@@ -1362,7 +1369,7 @@ label dining_hall_scene:
         gg "Ты сейчас серьёзно? {w}Тебе так нужен паритет в этом вопросе?"
         uv "Шучу-шучу. Мы вполне можем переодеться, не глядя друг на друга…{w} Скорей всего."
 
-        scene bg int_extra_house_dayy with dissolve
+        show int_extra_house_dayy at truecenter with dissolve
 
         uv "Здорово! Славя уже принесла форму."
         gg "И бельё."
@@ -1395,8 +1402,7 @@ label dining_hall_scene:
         play music music_list["sweet_darkness"] fadein 2
 
         scene bg ext_house_of_ggs_day with dissolve
-        scene bg ext_houses_day with dissolve
-        scene bg ext_shower_day with dissolve
+        scene exxt_shower_day with dissolve
 
         gg "Я мигом."
         uv "Забей. Кинь прямо тут. Серёга быстрей найдёт."
@@ -1527,7 +1533,7 @@ label dining_hall_scene:
         un "Точно! {w}Наверное, с такой сестрой скучать не приходится."
         gg "Угу."
 
-        show un surprise swim with dspr
+        show un smile2 swim with dspr
 
         un "Чем-то похожа на нашу Ульянку. {w}Ты её знаешь?"
         gg "Да. Познакомились уже."
@@ -1544,12 +1550,16 @@ label dining_hall_scene:
         un "Я бы всё равно не стала."
         gg "Я сам не ел, но слышал, что по вкусу на курицу похоже."
 
-        show un scared swim with dspr
+        show un shocked swim with dspr
 
         un "Гадость!"
-        gg "Но считается деликатесом. {w}Вообще все эти национальные деликатесы берутся из тех времён, когда с едой было не важно."
+        gg "Но считается деликатесом."
 
-        show un surprise swim with dspr
+        show un smile swim with dspr
+
+        gg "Вообще все эти национальные деликатесы берутся из тех времён, когда с едой было не важно. Вот и ели люди всяких лягушек, змей, крокодилов… {w}Или взять какую-нибудь пиццу. {w}Это ж только с голодухи можно придумать: раскатать тесто на тонкий кружок и насыпать туда всё что съедобного осталось. Кусочек колбаски, сыра, грибы…"
+
+        show un shy swim with dspr
 
         un "А ты ел пиццу? {w}Круто! {w}Вкусная?"
 
@@ -1559,13 +1569,13 @@ label dining_hall_scene:
         un "На что похоже?"
         gg "Блин! Даже не знаю…{w} На пиццу.{w} Сложно описать. Вроде хот-дога. Только с колбасой и грибами."
 
-        show un normal swim with dspr
+        show un smile2 swim with dspr
 
         un "Прикольно."
         gg "Угу. {w}Я думаю, если открыть в нашем городе пиццерию - будет много клиентов."
 
         show sl normal pioneer at left
-        show uv normal pioneer at right
+        show uv normal pioneer at fleft
         with dissolve
 
         play music music_list["always_ready"] fadein 2
@@ -1577,8 +1587,8 @@ label dining_hall_scene:
 
         sl "Вшестером.{w} Ещё Саша и Серёжа."
 
-        show el normal pioneer at fleft
-        show sh normal pioneer at cleft
+        show el normal pioneer at fright
+        show sh normal pioneer at right
         with dissolve
 
         sh "Привет."
@@ -1615,6 +1625,8 @@ label dining_hall_scene:
         
         show sl smile pioneer
         show un sad swim
+        show el normal pioneer
+        show sh normal pioneer
         with dissolve
         
         uv "Отлично.{w} А я выбираю Лену. {w}Как называется ваша команда, Максик?"
@@ -1623,6 +1635,8 @@ label dining_hall_scene:
         gg "Ладно…"
         
         "Из головы тут же вылетели все брутальные слова. И крутилась одна лишь пицца с хот догами."
+        th "Пицца, пицца…"
+        th "Папа Джонс? Додо? Доминос…"
         
         gg "\"Домино\"."
         uv "Какое глупое название. {w}А мы будем называться… \"импульсы\". Как вам?"
@@ -1646,10 +1660,10 @@ label dining_hall_scene:
         
         scene bg ext_beach_day with dissolve
         show sl smile pioneer at center
-        show un smile swim at right
-        show uv smile pioneer at left
+        show un smile swim at cright
+        show uv smile pioneer at cleft
         show sh smile pioneer at fleft
-        show el smile pioneer at cleft
+        show el smile pioneer at fright
         
         "Мы победили с разгромным счётом 10:3. Потом поменялись сторонами и снова победили 10:7."
         
@@ -1751,12 +1765,13 @@ label dining_hall_scene:
         un "Точно!"
 
     label shower_scene:
-        scene bg ext_shower_day with dissolve
-        show sl normal pioneer at left
-        show un normal pioneer at center
-        show uv normal pioneer at right
+        scene exxt_shower_day with dissolve
+
+        show sl normal pioneer at center
+        show un normal swim at cright
+        show uv normal pioneer at cleft
         show sh normal pioneer at fleft
-        show el normal pioneer at cleft
+        show el normal pioneer at fright
         
         uv "Мальчики - налево, девочки - направо."
         sl "Вообще-то наоборот."
@@ -1770,17 +1785,17 @@ label dining_hall_scene:
         with dissolve
         
         scene bg int_shower_day with dissolve
-        play sound sfx_water_sink
+        play sound sfx_close_water_sink
         
         "Освежиться - это то, что сейчас надо. Я случайно задел локтём дальнюю стенку."
         
-        play sound sfx_knock_door6
+        play sound sfx_punch_medium
         
         "И услышал точно такой же стук с той стороны."
         
         "Я постучал два раза."
         
-        play sound sfx_knock_door6_polite
+        play sound sfx_pat_shoulder_hard
         
         "Это с женской стороны кто-то прикалывается!"
         
@@ -1793,7 +1808,7 @@ label dining_hall_scene:
         
         play music music_list["take_me_beautifully"] fadein 2
         
-        scene bg ext_shower_day with dissolve
+        scene exxt_shower_day with dissolve
         show uv normal pioneer at center with dissolve
         
         "Я вышел из душа последним. Только Юля меня ждала."
@@ -1995,6 +2010,7 @@ label dining_hall_scene:
         scene bg ext_dining_hall_away_day with dissolve
         scene bg ext_path_day with dissolve
         scene bg ext_house_of_ggs_day with dissolve
+
         scene bg int_extra_house_dayy with dissolve
         
         show uv normal pioneer at center with dissolve
