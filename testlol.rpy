@@ -617,7 +617,7 @@ label day_1_su:
     uv "Где душ - там много бесхозной одежды"
     "(фоны тропинок лагеря)"
     scene exxt_shower_day with dissolve
-    gg "Куда теперь? Тут даже не указано, где ''Эм'' где ''Ж''"
+    gg "Куда теперь? Тут даже не указано, где ''Эм'' где ''Жо''"
     uv "Ну так проверь! Я на стрёме постою."
     gg "А чё я?"
     uv "Потому что парня без штанов в душевой объяснить легче, чем девушку с хвостом."
@@ -692,7 +692,7 @@ label day_1_1_su:
     gg "Ну спрашиваю у кого-нибудь."
     uv "Что сейчас мешает? Рот у тебя есть. Уши есть. Разговаривать умеешь…"
     gg "Да хорошо что всего на 30 лет назад вернулся. А не на 300."
-    "Интересно, как бы я тогда спрашивал дорогу?"
+    th "Интересно, как бы я тогда спрашивал дорогу?"
     stop music fadeout 1
     "\"Бью челом, путник! Соблаговолите поведать кратчайший путь до воеводы.э\""
     "(эмбиент проигрыш первых нот песни ''Маруся'')"
@@ -1031,6 +1031,7 @@ label pier_meet_lena:
     un "С радостью!"
 
     scene bg ext_path_day with dissolve
+    $ renpy.pause(1)
     scene bg ext_square_day with dissolve
 
     "Лена повела нас в столовую, хотя в данном случае проводник был не особо нужен."
@@ -1107,7 +1108,9 @@ label clubs_meet_miku:
     mi "Ой, не повезло. ну ничего страшного. В следующий раз сыграешь.{w} Пошлите на обед! Тут так здорово кормят. Гречка чуть ли не каждый день.{w} У нас в Японии - это дефицит. А рыба только раз в неделю. По четвергам. Я так и не поняла почему…"
 
     scene bg ext_path_day with dissolve
+    $ renpy.pause(1)
     scene bg ext_square_day with dissolve
+    $ renpy.pause(1)
     scene bg ext_dining_hall_away_day with dissolve
 
     "Мику не замолкала ни на секунду пока мы шли."
@@ -1357,6 +1360,7 @@ label dining_hall_scene:
         "И помыться."
 
         scene bg ext_dining_hall_away_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_square_day with dissolve
         scene ext_house_of_ggs_day with dissolve
 
@@ -1409,6 +1413,7 @@ label dining_hall_scene:
         gg "Да. Логично."
 
         scene bg ext_square_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_beach_day with dissolve
 
         uv "Смотри ка. Твоя мамка тут."
@@ -1819,6 +1824,7 @@ label dining_hall_scene:
         uv "Пошли скорей. Я умираю от голода."
         
         scene bg ext_path_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_dining_hall_away_day with dissolve
         
         "Необычайная для меня активность после обеда взрастила зверский аппетит. Главным образом, волейбол."
@@ -2028,7 +2034,9 @@ label dining_hall_scene:
         play music music_list["dance_of_fireflies"] fadein 2
         
         scene bg ext_dining_hall_away_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_path_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_house_of_ggs_day with dissolve
 
         scene bg int_extra_house_dayy with dissolve
@@ -2042,7 +2050,9 @@ label dining_hall_scene:
         gg "Обещаю"
         
         scene bg ext_house_of_ggs_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_path_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_camp_entrance_day with dissolve
         
         show mi normal pioneer at left
@@ -2313,7 +2323,9 @@ label dining_hall_scene:
         "Лена, вслед за ней и Мику начали зевать. Так что мы стали потихоньку собираться."
         
         scene bg ext_path2_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_camp_entrance_day with dissolve
+        $ renpy.pause(1)
         scene bg ext_house_of_ggs_day with dissolve
         
         show sl smile pioneer at left
