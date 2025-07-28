@@ -44,17 +44,28 @@ init:
     image alisa_shokk = "/mods/SkvozUlybku/image/sprite/al/2.jpg"
     image alisa_lowangry = "/mods/SkvozUlybku/image/sprite/al/3.jpg"
     #ЛЕНА
-    image lena_1 = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le1.png", 0.25)
+    image le_1 = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le1.png", 0.25)
     image lena_2 = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le2.png", 0.25)
     image lena_romashki = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le_romashki.png", 0.5)
     #Юля
-    image uv_grin = "/mods/SkvozUlybku/image/sprite/uv/last_uv_grin.png"
-    image uv_laugh = "/mods/SkvozUlybku/image/sprite/uv/last_uv_laugh.png"
-    image uv_normal = "/mods/SkvozUlybku/image/sprite/uv/last_uv_normal.png"
-    image uv_sad = "/mods/SkvozUlybku/image/sprite/uv/last_uv_sad.png"
-    image uv_smile = "/mods/SkvozUlybku/image/sprite/uv/last_uv_smile.png"
-    image uv_sur = "/mods/SkvozUlybku/image/sprite/uv/last_uv_sur.png"
-    image gaset_uv_normal = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_normal.png"
+    image uv pioneer_laugh = "/mods/SkvozUlybku/image/sprite/uv/last_uv_grin.png"
+    image uv pioneer_normal = "/mods/SkvozUlybku/image/sprite/uv/last_uv_normal.png"
+    image uv pioneer_sad = "/mods/SkvozUlybku/image/sprite/uv/last_uv_sad.png"
+    image uv pioneer_smile = "/mods/SkvozUlybku/image/sprite/uv/last_uv_smile.png"
+    image uv pioneer_sur = "/mods/SkvozUlybku/image/sprite/uv/last_uv_sur.png"
+    image uv pioneer_angry = "/mods/SkvozUlybku/image/sprite/uv/last_uv_angry.png"
+    image uv gaset_normal = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_normal.png"
+    image uv gaset_angry = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_angry.png"
+    image uv gaset_angry2 = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_angry2.png"
+    image uv gaset_angry3 = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_angry3.png"
+    image uv gaset_laugh = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_laugh.png"
+    image uv gaset_laugh2 = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_laugh2.png"
+    image uv gaset_shame = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_shame.png"
+    image uv gaset_smile = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_smile.png"
+    image uv gaset_sur = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_sur.png"
+    image uv gaset_sur2 = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_sur2.png"
+    image uv cat6 = "/mods/SkvozUlybku/image/sprite/uv/cat6.png"
+    
     #ПАДИК ЖЕНЬКИ
     image zhpad = "/mods/SkvozUlybku/bg/prolog/zhpad.jpg"
     #КУХНЯ МАКСИМА
@@ -68,8 +79,8 @@ init:
     #ПОЛТОРА ЧАСА...
     image zhpopoyka = "/mods/SkvozUlybku/cg/zhpopoyka.jpg"
     #ЖЕНЯ
-    image zh_calm_close = "/mods/SkvozUlybku/image/sprite/zh/zh_calm_close.png"
-    image zh_laugh_close = "/mods/SkvozUlybku/image/sprite/zh/zh_laugh_close.png"
+    image zh calm_close = "/mods/SkvozUlybku/image/sprite/zh/zh_calm_close.png"
+    image zh laugh_close = "/mods/SkvozUlybku/image/sprite/zh/zh_laugh_close.png"
     #КОМНАТА ЖЕНИ
     image zhkomnata_day = "/mods/SkvozUlybku/bg/prolog/zhkomnata_day.jpg"
     image zhkomnata_night = "/mods/SkvozUlybku/bg/prolog/zhkomnata_night.jpg"
@@ -94,7 +105,7 @@ init:
     #ДОМИК ГГ ВНУТРИ ДЕНЬ
     image int_extra_house_dayy = "/mods/SkvozUlybku/bg/lager/int_extra_house_dayy_7dl.jpg"
     #ДОМИК ГГ ВНУТРИ ВЕЧЕР
-    image int_extra_house_sunsset = "/mods/SkvozUlybku/bg/lager/int_extra_house_sunsset_7dl.jpg"
+    image int_extra_house_sunsset = "/mods/SkvozUlybku/bg/lager/int_house_of_to_sunsset.jpg"
     #ДОМИК ГГ ВНУТРИ НОЧЬ
     image int_extra_house_nigght = "/mods/SkvozUlybku/bg/lager/int_extra_house_nigght_7dl.jpg"
     #ДОМИК ГГ ВНУТРИ НОЧЬ ВЫКЛ СВЕТ
@@ -318,7 +329,7 @@ label prologday1:
     gg "Свои."
     mz "Макс, если припёрся пьяным - я тебе с лестницы спущу."
     gg "Я трезв, но собираюсь это исправить."
-    show zh_calm_close with dissolve
+    show zh calm_close with dissolve
     mz "Если ты задумал почистить батины запасы…"
     gg "Не бойся. У меня с собой."
     "Я продемонстрировал соседке две полторашки."
@@ -329,11 +340,11 @@ label prologday1:
     $ renpy.pause(2)
     window show
     scene zhkomnata_night with dissolve
-    show zh_calm_close with dspr
+    show zh calm_close with dissolve
     gg "Короче она меня послала. "
     mz "Как неожиданно."
     gg "Не смешно. Если бы тебя послала любовь всей твоей жизни?"
-    show zh_laugh_close with dspr
+    show zh laugh_close with dissolve
     mz "Ты про Марго Робби? {w}Я бы сперва охуела от того, что она забыла в нашем N-ске.{w} Потом бы охуела с того, что она говорит по-русски. {w} А в конце обняла её, типа на прощанье, и попыталась ухватить за задницу."
     th "Я не упоминал, что Женя предпочитает девушек?"
     th "Ну можно было догадаться."
@@ -341,14 +352,14 @@ label prologday1:
     gg "Если бы я попытался схватить Алису за зад, то получил бы по ебальцу."
     mz "Как и я, но оно того стоило бы."
     gg "Предпочитаю не рисковать."
-    show zh_calm_close with dspr
+    show zh calm_close with dissolve
     mz "Я в курсе. В этом твоя проблема. Ты слишком осторожничаешь."
     gg "Просто я не люблю ошибаться."
     mz "Ну-у-у милый мой, {w}такова се ля ви. {w}Все ошибаются. {w}Не ошибается только тот, кто ничего не делает."
     gg "Говорят жил две тысячи лет назад парень, который не ошибался."
     mz "И что с ним стало?"
     gg "Его зарезали в сенате."
-    show zh_laugh_close with dspr
+    show zh laugh_close with dissolve
     mz "Блин! А я про другого парня подумала. Который умел превращать воду в вино"
     gg "Кстати насчёт вина…"
     "(Спрайт сердитая Женька)"
@@ -356,20 +367,20 @@ label prologday1:
     gg "Я же ещё ничего не сказал."
     mz "А то я по твоей наглой морде не вижу, что ты нацелился на бабушкино домашнее вино."
     gg "Я что, такой предсказуемый?"
-    show zh_laugh_close with dspr
+    show zh laugh_close with dissolve
     mz "Неа {w} Это я - такая проницательная"
     gg "то есть мне не видать ни бабушкино вина, ни дедушкиного самого… Печалька."
     mz "Могу угостить папиным коньяком {w} Но только чуть-чуть."
     gg "Пару рюмочек, ага."
-    show zh_calm_close with dspr
+    show zh calm_close with dissolve
     mz "Вот, ей Богу, Максимчик,{w} если бы ты так же разводил девушек на секс, как разводишь меня на алкоголь,{w} то у тебя бы уже за сотню баб было."
     gg "Сомнительно. Это надо, чтобы они любили трахаться так же сильно, как ты любишь бухать."
-    show zh_laugh_close with dspr
+    show zh laugh_close with dissolve
     mz "Трахаться мы тоже любим."
     gg "Ага. Только не со мной."
     mz "Не верно. Только не с такими, как ты."
     gg "Эм-м-м…. и в чём разница?"
-    show zh_calm_close with dspr
+    show zh calm_close with dissolve
     mz "Как бы тебе объяснить? Вот смотри. Такие, как ты - это группа. Их видно сразу. Грубо говоря, по обложке. И они никому не нравятся. Но каждый из них, включая тебя, это ведь не только обложка. Я тебе 10 лет знаю. И для меня ты не только обложка."
     gg "То есть чтобы во мне разглядели личность и сексуального партнёра, мне надо всего навсего десять лет общения."
     mz "Десять - не десять. Но полгодика можно."
@@ -396,7 +407,14 @@ label prologday1:
     th "Идити пьяным от Женьки настолько привычное дело, что я бы смог проделать это с закрытыми глазами."
     scene dommax with dissolve
     "Я уже подходил к своим родным панелькам, как вдруг…."
-    scene cat_night with dissolve
+    transform cat_transform:
+        zoom 0.4
+        xalign 0.7
+        yalign 0.9
+        easein 0.5
+
+    show uv cat6 at cat_transform
+
     "Увидел кошечку."
     "Обычную. Дворовую."
     th "Такая несчастная и одинокая."
@@ -481,9 +499,17 @@ label gg_take_cat:
     play music space_song fadein 2
     $ renpy.pause(1)
     scene bg semen_room with dspr
+
     "Вернувшись, я напряг все свои силы чтобы не выдать себя да и поскорее лечь спать"
-    "К счастью, мать была в гостиной и смотра новостной канал.  "
-    "Быстро шмыгнув в комнату я выпустил кошку и жестом указал ей быть тихо. До комнаты доносился лишь еле слышные звуки телика."
+    "К счастью, мать была в гостиной и смотрела телевизор"
+    "Быстро шмыгнув в комнату я выпустил кошку."
+    transform cat_transform:
+        zoom 0.4
+        xalign 0.7
+        yalign 0.9
+        easein 0.5
+
+    show uv cat6 at cat_transform
     gg "И какое дать тебе имя? Хм... {w}Может ты подскажешь?"
     uv "мурл!"
     gg "Логично. Назову тебя Мурлыся!"
@@ -531,7 +557,7 @@ label day_1_su:
     play music music_list["no_tresspassing"] fadein 1
     scene bg ext_polyana_day with dissolve
     "Первое, что я увидел - свет."
-    show uv normal with dissolve
+    show uv smile body with dissolve
     "Второе что я увидел - голые сиськи."
     th "Хотя может и их первыми."
     th "Не то, чтобы я озабоченный, но когда ты просыпаешься в незнакомом месте и рядом сидит незнакомая голая девушка, то вполне естественно обратить внимание на её обнажённую грудь."
@@ -544,36 +570,36 @@ label day_1_su:
     uv "Йес-йес. Итс ми. Родной язык забыл?"
     gg "Но ты же кошка!{w} В смысле, была кошкой! {w}Что, чёрт возьми, случилось? Где мы? Кто ты такая?"
     uv "Так. Давай по порядку. Я Юля. В том мире была кошкой. В этой человек. В третьем… буду ещё кем-то. Не заморачивайся. А то укушу!"
-    "(спрайт угрожающая Юля)"
+    show uv rage body with dissolve
     gg "Не буду."
-    "(спрайт обычная Юля)"
+    show uv smile body with dissolve
     uv "Мы недалеко от пионерского лагеря."
     gg "Их же давно уже нет!"
     uv "А ещё мы в прошлом. Не бойся не надолго. Ты же сам хотел изменить свою жизнь, так?"
     gg "Так"
     uv "Вот у тебя появилась возможность.{w} Можешь не благодарить."
     gg "Я и не собирался."
-    "(спрайт угрожающая Юля)"
+    show uv rage body with dissolve
     uv "И прекрати пялиться на мою грудь. {w} Это, знаешь ли, раздражает."
     gg "Прости"
     "Я поднял взгляд повыше."
     gg "У тебя уши!"
     uv "У тебя тоже."
     gg "Да нет. У тебя кошачьи уши!"
-    "(спрайт удивлённая Юля)"
+    show uv surprise body with dissolve
     uv "Правда?"
     "Девушка потрогала свои ушки."
     uv "Странно. Должны были человеческими стать.  {w} Ой! И хвост остался. {w}Ну дела… {w}Ладно. Что-нибудь придумаем.{w} Пошли!"
     gg "Куда?"
     uv "В лагерь. Сейчас утро. Надо на завтрак успеть."
     gg "Как ты можешь сейчас думать про еду?"
-    "(спрайт улыбающаяся Юля)"
+    show uv smile body with dissolve
     uv "А почему нет? Ты разве не можешь?"
     gg "Нет! Я напился до чёртиков, разговаривал с котом. {w}Попал в какой-то лес.{w} Очутился в прошлом.{w}"
     gg "Передо мной получеловек-полукот.{w} Без обид, но мне сейчас не до еды. {w} И чуть не забыл:{w} ТЫ - ГОЛАЯ!"
     uv "Ну голая, ну и что? Ты что никогда голых девушек не видел?"
     gg "Живых нет. В смысле, живьём. В смысле, в живую."
-    "(спрайт угрожающая Юля)"
+    show uv rage body with dissolve
     uv "Всё! {w} Снимай рубашку!"
     gg "Не понял.. мы что, сейчас…"
     uv "Нет! Просто пока я голая, ты не способен нормально думать."
@@ -584,7 +610,7 @@ label day_1_su:
     gg "Да я не про это! Как ты будешь их носить? У тебя же хвост."
     uv "А у тебя член! Ну и что? Не мешает же штаны носить."
     gg "Я его в одну из штанин…"
-    "(спрайт обычная Юля)"
+    show uv smile body with dissolve
     stop music fadeout 1
     uv "Вот и я так же сделаю."
     play music music_list["reflection_on_water"] fadein 1
@@ -691,22 +717,22 @@ label day_1_1_su:
     "Я начал складывать газету, а Юля внимательно наблюдать за моими действиями."
     "Когда я закончил, то в руках у меня была самодельная пилотка."
     gg "Держи. На первое время хватит, а потом что-нибудь придумаем."
+    show uv gaset_normal with dissolve
     uv "Спасибо большое."
-    show gaset_uv_normal with dissolve
     gg "Теперь что?"
     uv "Я уже говорила. Ты должен действовать самостоятельно."
     gg "Угу. Ты лишь указываешь на дверь, а войти должен я."
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur with dissolve
     uv "Какая ещё дверь? Причём тут это?"
     gg "Не обращай внимание. Это из одного фильма…{w} Короче нам надо заселиться, так? А для этого надо что?"
     uv "Что?"
     gg "Найти местный ресепшн. Или как оно по-советски будет? Администрация?"
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal with dissolve
     uv "И как будешь искать?"
     gg "Я надеялся, что ты подскажешь. Как с душем."
     uv "Это каким же образом?"
     gg "Не знаю. Услышишь шелест бумаг."
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Так…. давай по-другому. {w}Представь, что меня тут нет. И тебе самому надо выпутываться.{w} Что ты делаешь, когда не знаешь дорогу?"
     gg "Ну спрашиваю у кого-нибудь."
     uv "Что сейчас мешает? Рот у тебя есть. Уши есть. Разговаривать умеешь…"
@@ -721,24 +747,23 @@ label day_1_1_su:
     play music music_list["went_fishing_caught_a_girl"] fadein 2
     uv "Вон! Смотри, местная обитательница."
     "Я присмотрелся: невдалеке, спиной к нам, стояла юная девушка. Она наклонилась, рассматривая что-то в траве. Демонстрируя прекрасный вид на свою пятую точку."
-    scene black with dissolve
     "(цг Лена стоит в интересной позе)"
-    show un normal pioneer with dissolve
-    show gaset_uv_laugh2 with dissolve
+    scene bg ext_square_day with dissolve
+    show un normal pioneer at right with dissolve
+    show uv gaset_laugh2 at left with dissolve
     uv "И задница - что надо. Так и хочется шлёпнуть!"
     gg "Тихо! Мы тут гости и надо вести себя прилично. Я даже у себя на районе такие вольности себе не позволял."
-    show gaset_uv_angry with dissolve
+    show uv gaset_angry with dissolve
     uv "Ну конечно. Это котов можно без спроса тискать и гладить. А к человекам почёт и уважение."
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal with dissolve
     "Юля решительно направилась к девушке и, подойдя поближе размахнулась…"
     "Я схватил Юлю за руку, но инерция была так сильна что шлепок всё равно состоялся."
     "(эмбиент - шлепок)"
     "Причём моей рукой."
-    scene bg ext_square_day with dissolve
     show un scared pioneer with dissolve
     un "Ой!"
     gg "Чёрт! Это всё…"
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "Привет! Прости, что побеспокоили. Мы - Мухины. Только приехали. Я Юля"
     un "Й-й-йа Лена…"
     uv "Очень приятно! {w}Уверена мы с тобой станем лучшими подругами!"
@@ -749,116 +774,116 @@ label day_1_1_su:
     un "Э-э-э… конечно."
     uv "А что ты там разглядывала?"
     un "Бабочку."
-    show gaset_uv_sur2 with dissolve
+    show uv gaset_sur2 with dissolve
     uv "Ух ты! Какая красивая. {w}Я тоже люблю бабочек. {w}Давай вместе половим."
     gg "Ма… ма… ма…"
     un "Что?"
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "Он хочет сказать, что его зовут Максим. {w}Можно просто Макс. {w}Даже лучше. Сама видишь. Заика…."
     show un smile2 pioneer with dspr
     un "Ой! Ну это ничего. Ты главное не переживай.{w} Я вот в детстве картавила."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "А я шепелявила. {w}Как у нас много общего! {w}Правда здорово, Максик?"
     un "Но я потом научилась говорить правильно."
     uv "И Максик научится. {w}Когда-нибудь. {w}Мы ему будем помогать всеми силами."
     gg "Да нормально я разговариваю."
     show un surprise pioneer with dspr
-    show gaset_uv_sur2 with dissolve
+    show uv gaset_sur2 with dissolve
     uv "Свершилсь чудо! {w}Максимка заговорил. Ура!{w} Мы вылечили братика…"
     "Юля взяла всё ещё растерянную Лену за руки и стала прыгать."
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "А теперь скажи быстро: ''Наши поезда - самые поездатые поезда в мире…'' {w}Хотя нет. Это слишком сложная. {w}Давай вот эту: ''Из преподвыперта зайчик преподвыпернулся''"
     gg "Из преподвыперта самый поездатый зайчик… тьфу ты. {w}Задурила голову! {w}Ма… Лена, мы просто хотели спросить, где тут начальство? Чтоб оформить…  ся."
     show un normal pioneer with dspr
     un "А-а-а… ну администрация там. Только она закрыта. {w}Вам лучше к Ольге Дмитриевне. Она старшая вожатая.{w} Это третий домик, если идти по той дороге. Вы его сразу узнаете, рядом куст сирени растёт."
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Спасибо тебе огромное. {w}Ты наша спасительница."
     show un smile pioneer with dspr
     un "Пожалуйста. {w}Приятно было познакомиться{w}. Юля.{w} И Макс… им."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "И нам, и нам. {w}Мы ещё обязательно увидимся. {w}До встречи… Максик, попрощайся!"
     gg "Что? {w}Ах, да.{w} Пока..."
 
     scene bg ext_houses_day with dissolve
     play music music_list["my_daily_life"] fadein 2
-    show gaset_uv_normal with dissolve
+    show uv gaset_laugh at left with dissolve
     gg "Какого чёрта ты не сказала, что тут моя мама?!"
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "Чтобы не испортить сюрприз. {w}И потом, ты же сам захотел изменить свою жизнь."
     gg "Через встречу с молодой версией матери? {w}Это как-то не нормально…"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "А что думал тут будет? {w}Побываешь в прошлом, пообщаешься с местными пару дней - и твоя жизнь круто поменяется? Только потому что ты что-то там поймёшь?{w} Фигушки! {w}Так только в дешёвых сериал работает."
     gg "А как же Сэм?"
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur with dissolve
     uv "Кто?"
     gg "Ну Сэм. Из Властелина Колец. {w}Он же отправился с Фродо в приключение. Там чё-то понял, научился. И смог пригласить Розочку на свидание."
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "Так то Властелин Колец. Там он два года проходил через страдания и лишения.{w} А ты - в пионерлагерь попал на денёк. Где самое страшное наказание - это дежурство в столовой.{w} Это во-первых.{w} А во-вторых, кончай занудствовать. Расскажешь своей крале про властелин колец, и тебе уже никакие путешествия во времени не помогут."
     gg "Так что ж мне делать?{w} Попросить свою мать лучше воспитывать будущего… {w}Погоди, а если я тут что-то изменю, я же не исчезну?"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Будем надеется, что нет. {w}Но на всякий случай, действуй осторожно. {w}Никаких глобальных изменений. Ставок на спорт, на рассказывай ей сюжет Гарри Поттера{w} и самое главное ни в коем случае не трахайся с ней!"
     gg "ЧЕГО?"
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "Что? Твоя мама красотка. А ты - извращенец. Вполне вероятное развитие событий.{w} Ты здесь и двух часов не пробыл, а уже полапал её за задницу. {w}Понятное дело, она как персик. Так и просится в руку."
     gg "Это вышло случайно!"
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "А на сиськи её тоже случайно смотрел?"
     gg "Ничего я не смотрел."
     uv "Конечно, у неё буфера побольше моих. Зато у меня уши больше."
     gg "Так, всё! {w}Закрыли тему. Мы оба будем крайне осторожны."
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Как скажешь, капитан!{w} Что прикажете делать дальше?"
     gg "Поищем эту Дмитрию Ольговну."
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "Есть.{w} На жопе шерсть. {w}Кстати, у меня действительно немного есть. Потом покажу…"
     gg "Не надо. Я верю."
     uv "Уверен? {w}Не каждому выпадает возможность поглазеть на шерстистую задницу фурри…"
     gg "Давай сосредоточимся на текущих проблемах. Ищем куст сирени."
     scene bg ext_house_of_mt_day with dissolve
-    show gaset_uv_normal with dissolve
+    show uv gaset_laugh2 at left with dissolve
     uv "Вот куст. А значит это её домик."
     gg "Говорить буду я."
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur with dissolve
     uv "Почему ты?"
     gg "Потому что я не хочу, чтобы ты комментировала размер её сисек и форму её задницы."
-    show gaset_uv_angry with dissolve
+    show uv gaset_angry with dissolve
     uv "Пф-ф-ф.. тоже мне неженка."
     gg "Мои чувства тут не причём. {w}Я не хочу, чтоб меня выгнали, ещё до заселения. {w}Тебе-то хорошо, ты на мышей охотиться будешь. А мне что делать?"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Не переживай. Всё будет хорошо."
     gg "Приятно слышать."
     uv "Угу. Я поделюсь с тобой кусочком мышки."
     gg "Что?"
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "Надеюсь, тебе нравятся хвосты. Иначе останешься голодным."
     show mt normal panama pioneer with dissolve
     play music music_list["get_to_know_me_better"] fadein 1
     mt "Ой! А вы кто такие?"
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "Здравствуйте, Ольга Дмитриевна! Мы - Мухины! Юля и Максим. Только что прибыли в ваш отряд, чтобы пополнить славные ряды пионеров! Ура!"
     "Юля отдала честь по-пионерски."
     "Я неловко повторил за ней."
     show mt surprise panama pioneer with dspr
     mt "Новенькие? А почему мне никто не доложил?"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Так это всё дедушкины проделки. Он специально не разрешает сообщать, чтобы для нас специально ничего не готовили."
     mt "А дедушка у нас кто?"
     uv "Секретарь обкома!"
     mt "Точно? Не врёте?"
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     gg "Да, он нас сам сюда привёз. На Волге. А как бы мы ещё сюда попали? Не пешком же!"
     show mt smile panama pioneer with dspr
     mt "Эм-м-м… Добро пожаловать в Совёнок! Давайте вас куда-нибудь заселим. У нас, правда, всего один домик. Тебя, Юля, туда. А тебя, к кому-нибудь подселим. Будете по очереди на раскладушке спать."
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "А можно нас в один домик?"
     mt "Если честно, обычно мы не селим мальчиков с девочками, но раз вы брат и сестра, то ладно."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "УРА!!!!"
     mt "Юля, Юля… я очень рада, что в тебе столько энтузиазма, только давай радоваться чуть-чуть потише. Просто у нас тут маленькие детки, и они могут… эм-м-м… испугаться."
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "Обожаю деток! Жду не дождусь, когда удасться с ними поиграть."
     mt "Да-да. Это замечательно. Давайте как для начала вас заселим."
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Хорошо! Где наш домик."
     mt "А давайте я вас провожу! Или нет… лучше Славя вас проводит. Славя!"
     show sl normal pioneer at right with easeinright
@@ -873,16 +898,16 @@ label day_1_1_su:
     show sl normal pioneer with dspr
     play music music_list["she_is_kind"] fadein 1
     sl "Ну что? Вам сперва экскурсию провести? Или сразу заселитесь?"
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "Можно и так и так. Мы на всё согласны. Правда, братик?"
     show sl smile pioneer with dspr
     sl "Знаете, а вы не сильно похожи. Обычно братья и сёстры такие одинаковые. Вот моих братьев если в ряд выстроить - сразу видно, что родственники."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "Как матрёшки! Ха-ха-ха…"
     sl "Точно! Ты такая позитивная. {w}Аж самой хочется смеятся."
     uv "Спасибо, ты тоже. {w}Надеюсь, мы подружимся."
     sl "Конечно. А он чего всё время молчит?"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Не обращай внимание. {w}Он, как красивую девушку увидит - сразу смущается и дар речи теряет."
     show sl shy pioneer with dspr
     sl "Правда что ли? Это - так мило. Ты считаешь меня красивой?"
@@ -897,32 +922,32 @@ label day_1_1_su:
     hide sl normal pioneer with dissolve
     scene bg ext_houses_day with dissolve
     show sl normal pioneer with dissolve
-    show gaset_uv_smile at left with dissolve
+    show uv gaset_smile at left with dissolve
     sl "Вот там у нас главная площадь. Вы её, наверное уже видели, чуть дальше пляж. А в той стороне кружки."
     uv "Какие такие кружки?"
     sl "Разные. Музыкальные, рисовальные, театральные. Даже есть кружок кибернетиков. {w}Максим, тебе может понравится."
     gg "Чё это мне должно понравится?"
     sl "Не знаю. Там тоже такие молчаливые серьёзные ребята.{w} Да всем мальчишкам техника нравится! Любишь мастерить?"
     gg "Ну мы с дедом как-то самогонный аппарат чинили…"
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur with dissolve
     show sl surprise pioneer with dspr
     sl "Что?"
     "Юля наступила мне на ногу. Явно специально."
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Максик шутит. А что там?"
     show sl normal pioneer with dspr
     sl "А там запасной выход из лагеря. Но он всегда открыт. Так что можно по грибы ходить."
     uv "Здорово. Обязательно сходим. {w}Спорим, я больше всех соберу!"
     hide sl normal pioneer with dissolve
     scene ext_house_of_ggs_day with dissolve
+    show uv gaset_smile at left with dissolve
     show sl normal pioneer with dissolve
     sl "Вот ваше новое жилище. Располагайтесь. А я сбегаю на склад, что-нибудь поищу для вас."
     "Славя положила нам руки на плечи и ушла."
     hide sl normal pioneer with dissolve
     play music music_list["smooth_machine"] fadein 2
     gg "Она меня коснулась!"
-    show uv normal with dissolve
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal with dissolve
     uv "И что?"
     gg "Это значит, что я ей понравился?"
     uv "Не говори ерунды! Меня она тоже коснулась. {w}По-твоему, и я ей понравилась?"
@@ -935,32 +960,33 @@ label day_1_1_su:
     gg "Она - не похожа на лесбиянку!"
     uv "А как, по-твоему, должны выглядеть лесбиянки?"
     gg "Маленькие, тёмненькие и в очках. {w}А она высокая светленькая и без очков."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "Логика просто высшего уровня. {w}Что ты только забыл в своём ПТУ? Тебя в Оксворд надо…"
     gg "Откуда ты вообще знаешь про Оксфорд? Ты же… ты же…"
-    show gaset_uv_angry2 with dissolve
+    show uv gaset_angry2 with dissolve
     uv "Кто?"
     gg "Ну… кот! Кошка."
     uv "И что?"
     gg "Не знаю. Обычно в университет не принимают котов. Или для волшебных сделали исключение? {w}Так тебе тогда не в Оксфорд надо, а в Хогвардс…"
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal with dissolve
     uv "Юморист из тебя такой же, как из меня волшебник"
     play sound dver
     # scene int_extra_house_dayy with dissolve
     show int_extra_house_dayy at truecenter with dissolve
+    show uv gaset_normal at left zorder 1 with dissolve
     uv "Пожалуй, я буду сверху."
     gg "Ты же… о кроватях, да?"
-    show gaset_uv_angry3 with dissolve
+    show uv gaset_angry3 with dissolve
     uv "Конечно о кроватях, извращенец!"
     gg "Да ладно, чё ты? Я просто спросил."
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal with dissolve
     uv "Спросил он, ага.{w} Кажется я поняла, в чём твоя проблема? Ты везде видишь пошлый подтекст."
     gg "Кто сказал, что это проблема?"
     uv "Я сказала! Этого мало?"
     gg "Ну-у-у…"
     uv "Вот и хорошо. А теперь пошли."
     gg "Куда?"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Наружу. Не сидеть же в трёх стенах."
     gg "А вдруг Славя вернётся…"
     uv "Не переживай. Дверь всё равно не запирается."
@@ -968,19 +994,19 @@ label day_1_1_su:
     th "А причина ещё пообщаться со Славей показалась мне жалкой…"
     th "Озвучь я её и Юлька станет надо мной потешаться. И правильно сделает."
     show int_extra_house_dayy at truecenter with dissolve
-    show gaset_uv_normal at right
+    show uv gaset_normal at left
     show ext_square_day at truecenter with dissolve
-    show gaset_uv_normal at right
+    show uv gaset_normal at left
     uv "Куда теперь?"
     "Я прочитал надпись на табличке:"
     gg "Кружки. Пирс. Противная площадка."
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur with dissolve
     uv "Спортивная?"
     gg "Нет. Именно противная. Кто-то прикололся. И исправил."
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
     uv "Кто-то с таким же чувством юмора, как и ты."
     gg "Когда найду его обязательно с ним подружусь."
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Куда пойдём?"
     $ disable_all_zones()
     $ set_zone("boat_station", "pier_meet_lena")
@@ -990,26 +1016,26 @@ label day_1_1_su:
 label pier_meet_lena:
     scene ext_square_day 
     gg "Давай на пирс."
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur at left with dissolve
     uv "Почему туда?"
     gg "Там ничего не делать не надо."
-    show gaset_uv_angry with dissolve
+    show uv gaset_angry with dissolve
     uv "Ты - ленивая жопа."
     gg "Я за тебя переживаю. В спортивном костюме все сразу увидят твой хвост."
     uv "А кружки? Чем театральный плох? Хвостик и ушки я объясню таким вот реквизитом."
     gg "Это сработает, только если они репку ставят, или кота в сапогах. Или любой другой спектакль, где есть котики."
     gg "А если какую-нибудь Ромео и Джульетту? Как ты объяснишь появление хвостатого в старой Вероне?"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
     uv "Авторская постановка. Вместо враждующих человеческих семейств там будут кошки и собаки."
     gg "Ага. Мяутекки и Гавкулетти."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "Уже лучше. Я про твои шутки."
 
     scene bg ext_boathouse_day with dissolve
     show un normal pioneer at center with dissolve
 
     play music music_list["what_do_you_think_of_me"] fadein 2
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile at left with dissolve
 
     uv "Смотри! А вон твоя мамка сидит. Пошли к ней!"
     gg "Зачем?"
@@ -1029,7 +1055,7 @@ label pier_meet_lena:
     show un surprise pioneer with dspr
 
     un "К вам? Зачем?"
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
     uv "На новоселье! Ха-ха-ха…"
 
     show un smile pioneer with dspr
@@ -1042,10 +1068,10 @@ label pier_meet_lena:
     show un surprise pioneer with dspr
 
     un "Что?"
-    show gaset_uv_angry with dissolve
+    show uv gaset_angry with dissolve
     "Юля пихнула меня под рёбра."
 
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     gg "Можно, попросить в столовой…"
     uv "Так и поступим! А ты что тут делаешь?"
@@ -1056,7 +1082,7 @@ label pier_meet_lena:
     uv "Просто так? Без цели? Это же скучно! Давайте гулять вместе. И не просто гулять, а что-нибудь делать. Хотя бы цветы собирать!"
 
     "Юля нагнулась и сорвала ромашку."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
 
     uv "Кто больше всех соберёт, тот победил."
 
@@ -1070,7 +1096,7 @@ label pier_meet_lena:
 
     scene bg ext_boathouse_day with dissolve
     show un normal pioneer at center
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile at left with dissolve
 
     "Когда цветов стало много, Юля как будто забыла про соревнование и предложила сплести венок."
     "Они на пару быстро сделали из кучи ромашек и одуванчиков единое целое."
@@ -1079,14 +1105,14 @@ label pier_meet_lena:
 
     "С этим словами она водрузила своё творение на мамину голову."
 
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
 
     uv "Ой, как здорово!"
 
     show un shy pioneer with dspr
 
     un "Правда?"
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     uv "Максик, правда здорово?"
     gg "Да… Тебе… э-э-э… очень идёт."
@@ -1114,15 +1140,21 @@ label pier_meet_lena:
     play music music_list["smooth_machine"] fadein 2
 
     un "Вот наша столовая."
-    show gaset_uv_laugh with dissolve
+    show uv gaset_smile at left with dissolve
+    show un smile pioneer with dspr
+
 
     uv "М-м-м… как вкусно пахнет. Неужели котлеты?"
     un "Не знаю. Наверное."
 
     scene bg int_dining_hall_day with dissolve
 
+    show uv gaset_smile at left with dissolve
+    show un smile pioneer with dspr
+
     play ambience ambience_dining_hall_full fadein 2
 
+    show un smile2 pioneer with dspr
     un "Моё место вон там. Но мы же увидимся после обеда, да?"
     uv "Обязательно."
 
@@ -1132,31 +1164,32 @@ label pier_meet_lena:
 
 label clubs_meet_miku:
     scene ext_square_day
+    show uv gaset_sur at left with dissolve
     gg "Давай к кружкам."
     uv "Почему туда?"
     gg "Славя говорила, что там какие-то кибернетики."
 
-    show gaset_uv_angry with dissolve
+    show uv gaset_angry with dissolve
 
     uv "Ты - ссыкло! Тут уйма красивых девушек, а ты выбрал единственное место, где одни парни."
     gg "Спасибо, что хоть к гомосекам меня не причислила."
 
     scene bg ext_musclub_day with dissolve
 
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal at left with dissolve
 
     play music music_list["miku_song_flute"] fadein 2
 
     gg "Смотри вот тут была газета про юных гениев. {w} Готов поспорить, эти чудики - внутри."
 
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur at left with dissolve
 
     uv "Почему ''чудики''?"
     gg "Все учёные - чудики."
 
     scene bg int_musclub_day with dissolve
 
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal at left with dissolve
 
     uv "Это не сильно похоже на лабораторию."
     gg "Спасибо, кэп. Это больше на музыкальный магазин похоже."
@@ -1170,7 +1203,7 @@ label clubs_meet_miku:
 
     mi "Здрасте. Простите, я тут решила прибраться. {w}Нашла старую запись в нотном стане и задумалась. Прямо под роялем. А тут слышу голос, а это вы.{w} Кстати, я Мику. А вас как зовут? Вы верно новенькие. Пришли ко мне записаться?"
 
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     uv "Юля и Максим."
     gg "…И Максим."
@@ -1178,12 +1211,12 @@ label clubs_meet_miku:
     "Ну хоть кто-то считает, что мы похожи."
     "Хотя не исключено, что для этой девушки - все белые на одно лицо."
 
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
 
     uv "Максим играет на гитаре. Но только когда его никто не слышит. {w} Стесняется. Даже во двор гитару никогда не брал или на костёр."
-    "Откуда она про это знает?"
+    th "Откуда она про это знает?"
 
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     mi "Как здорово.{w} Что играет, а не что стесняется. Что стесняется - не очень здорово.{w} Я, если честно, тоже стеснялась когда начинала. А у нас после первого года в музыкальной школе выступление было. Я так волновалась, что забыла поклониться. Вышла и сразу пошла к пианино, чтобы сыграть.{w} Мне, правда, тогда всего восемь лет было."
     mi "А чём это я? Ах, да! Максим сыграй нам что-нибудь. {w} Вот. Держи акустику.{w} Я её только сегодня настраивала. Точнее перенастроила шестую струну. Я её вчера спустила в дробь д, чтобы одну песенку сыграть и забыла подтянуть."
@@ -1192,7 +1225,7 @@ label clubs_meet_miku:
 
     mi "Играй."
 
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
 
     uv "Спой, Максик, не стыдись."
     gg "Я, если честно, давно не играл."
@@ -1201,7 +1234,7 @@ label clubs_meet_miku:
     play sound sfx_dinner_horn_processed
 
     play music music_list["timid_girl"] fadein 2
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     mi "Ой, не повезло. ну ничего страшного. В следующий раз сыграешь.{w} Пошлите на обед! Тут так здорово кормят. Гречка чуть ли не каждый день.{w} У нас в Японии - это дефицит. А рыба только раз в неделю. По четвергам. Я так и не поняла почему…"
 
@@ -1220,7 +1253,8 @@ label clubs_meet_miku:
     th "Может, Юля права, и я в самом деле везде вижу пошлый подтекст?"
 
     scene bg int_dining_hall_people_day with dissolve
-
+    show mi smile pioneer at center with dissolve
+    show uv gaset_smile at left with dissolve
     play ambience ambience_dining_hall_full fadein 2
 
     mi "Вот там моё место. Спасибо за компанию Максимка и Юлька. Ещё увидимся…"
@@ -1233,8 +1267,7 @@ label dining_hall_scene:
     gg "А где наше место?"
     uv "Сходи поищи свободное. А я пока еды возьму."
 
-    hide gaset_uv_smile with dissolve
-
+    hide uv gaset_smile with dissolve
 
     "Сказать было проще, чем сделать."
 
@@ -1275,12 +1308,12 @@ label dining_hall_scene:
 
     show uv normal pioneer at right with moveinright
 
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
 
     uv "Всем привет. Я взяла тебе пять котлет."
     gg "Тут только три."
 
-    show gaset_uv_laugh2 with dissolve
+    show uv gaset_laugh2 with dissolve
 
     uv "Путь от раздачи был не близкий. Пришлось ополовинить миску."
 
@@ -1293,7 +1326,7 @@ label dining_hall_scene:
 
     us "А причём тут мухи?"
 
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
 
     uv "А потому что мы - Мухины. Ха-ха-ха… Я - Юля. Это вот - Максим."
     gg "Можно просто Макс."
@@ -1302,7 +1335,7 @@ label dining_hall_scene:
 
     us "А я Ульянка."
 
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     uv "Можно просто Янка?"
 
@@ -1312,18 +1345,18 @@ label dining_hall_scene:
 
     gg "Грязнулька - это прям в тему. {w} У тебя все руки в краске."
 
-    show gaset_uv_sur2 with dissolve
+    show uv gaset_sur2 with dissolve
 
     uv "Так вот, кто табличку на площади переделал!"
 
     us "Ага. Только это секрет. Вы никому не говорите."
 
-    show gaset_uv_laugh with dissolve
+    show uv gaset_laugh with dissolve
 
     uv "Замётано. {w} Максику, кстати, очень понравилась твоя шутка. Он минут пять смеялся."
 
     show us smile pioneer with dspr
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     us "Правда?"
     gg "Вроде того. Но руки лучше помыть."
@@ -1332,12 +1365,12 @@ label dining_hall_scene:
 
     "Я посмотрел на Юлю. Она лизала тыльную сторону своей ладони."
 
-    show gaset_uv_normal with dissolve
+    show uv gaset_normal with dissolve
 
     uv "Что? Я тоже решила умыться."
     gg "Языком?"
 
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     uv "Ах… да! {w} Совсем забыла.{w}  Мы просто с Максиком играли в карты. И я проиграла желание. И поэтому должна была до обеда изображать котика.{w}  Мяу. {w} Ха-ха-ха… Слава Богу уже не надо."
 
@@ -1369,7 +1402,7 @@ label dining_hall_scene:
     mt "Мухины? Вы почему тут сидите?"
     gg "Мы - это…"
 
-    show gaset_uv_sur with dissolve
+    show uv gaset_sur with dissolve
 
     uv "Больше мест не было. А что случилось?"
 
@@ -1383,7 +1416,7 @@ label dining_hall_scene:
     mt "Какую табличку? Ты о чём? {w} Я про Серёжины вещи, которые ты стащила, пока он мылся."
 
     show us surp2 pioneer with dspr
-    show gaset_uv_smile with dissolve
+    show uv gaset_smile with dissolve
 
     us "Вещи? Какие вещи? Ничего не знаю. У меня алиби."
 
@@ -1409,7 +1442,7 @@ label dining_hall_scene:
         show mt surprise pioneer with dspr
 
         mt "Не поняла. Зачем? Как?"
-        show gaset_uv_laugh with dissolve
+        show uv gaset_laugh with dissolve
 
         uv "Ой, да всё случайно вышло. Максик хотел с дороги помыться. {w}А я его вещи в сумочку положила. А он не знал, да по ошибке чужие взял.{w} Мы обязательно вернём… Серёже да?.. его вещи."
 
@@ -1455,13 +1488,13 @@ label dining_hall_scene:
         show mt normal pioneer with dspr
 
         mt "Вы уж простите за этот спектакль. Надо было проследить, чтобы вас в другое место посадили"
-        show gaset_uv_laugh with dissolve
+        show uv gaset_laugh with dissolve
         uv "Ничего. Мы обязательно перевоспитаем Ульянку и сделаем её образцовой пионеркой."
 
         show mt laugh pioneer with dspr
 
         mt "Ну удачи с этим. А пока лучше переоденьтесь в надлежащую форму. Славя ещё не выдала?"
-        show gaset_uv_smile with dissolve
+        show uv gaset_smile with dissolve
 
         uv "Как раз собирались."
         mt "Отлично"
@@ -1470,7 +1503,7 @@ label dining_hall_scene:
 
         mt "Юля… м-м-м… у нас не принято в столовой в головных уборах быть."
 
-        show gaset_uv_shame with dissolve
+        show uv gaset_shame with dissolve
 
         uv "Я это… в общем… не могу…"
 
@@ -1481,7 +1514,7 @@ label dining_hall_scene:
         show mt surprise pioneer with dspr
 
         mt "Ох! Ну тогда ладно. Но смени его на что-то более… пионерское."
-        show gaset_uv_laugh with dissolve
+        show uv gaset_laugh with dissolve
 
         uv "Есть!"
 
@@ -1493,7 +1526,7 @@ label dining_hall_scene:
 
         play music music_list["everyday_theme"] fadein 2
 
-        show gaset_uv_smile with dissolve
+        show uv gaset_smile with dissolve
 
         uv "Ну пошли переодеваться"
         gg "Угу."
@@ -1508,33 +1541,41 @@ label dining_hall_scene:
         scene ext_house_of_ggs_day with dissolve
 
         gg "Давай ты первая?"
-        show gaset_uv_sur with dissolve
+        show uv gaset_sur with dissolve
 
         uv "Первая - что?"
         gg "Ну пойдёшь переодеваться."
         uv "А вместе мы почему не можем? Голой ты меня уже видел…"
         gg "Эм-м-м… Ну ты меня не видела."
-        show gaset_uv_laugh2 with dissolve
+        show uv gaset_laugh2 with dissolve
 
         uv "Тем более! Будет справедливо, если и я посмотрю на тебя а-ля натюрель."
         gg "Ты сейчас серьёзно? {w}Тебе так нужен паритет в этом вопросе?"
 
-        show gaset_uv_laugh with dissolve
+        show uv gaset_laugh with dissolve
 
         uv "Шучу-шучу. Мы вполне можем переодеться, не глядя друг на друга…{w} Скорей всего."
+        hide uv
 
         show int_extra_house_dayy at truecenter with dissolve
+        show uv gaset_laugh2 at left zorder 1 with dissolve
 
         uv "Здорово! Славя уже принесла форму."
         gg "И бельё."
-        uv "Бельё нам не понадобиться. А вот форма… Ух ты! Тут даже шапочка есть. Супер! Ну? Как я тебе?"
+        uv "Бельё нам не понадобиться. А вот форма… Ух ты! Тут даже шапочка есть. Супер!"
 
-        show last_uv_sur with dissolve
+        hide uv
+        
+        $ renpy.pause(1)
+
+        show uv pioneer_sur at left with dissolve
+
+        uv "Ну? Как я тебе?"
 
         gg "Настоящая пионерка!"
         uv "Мне идёт?"
         gg "Да… кхе-кхе… Очень красиво смотрится."
-        show last_uv_smile with dissolve
+        show uv pioneer_smile with dissolve
 
         uv "Уже лучше. А теперь попробуй сформулировать это так, как будто ты - не пещерный человек."
         gg "Хм-м-м… \"Тебе идёт\"?"
@@ -1543,22 +1584,33 @@ label dining_hall_scene:
         "Я задумался на несколько секунд."
 
         gg "Ты всегда выглядишь отлично, но теперь просто сногсшибательно!"
+
+        show uv pioneer_laugh with dissolve
+
         uv "Бинго!{w} С третьей попытки.{w} Но ничего. Я ещё сделаю из тебя нормально парня."
         gg "Значит нормальный, с твоей точки зрения, это тот который рассыпается в лестных комплиментах?"
         uv "Нормальный - это тот который понимает что такое условности и принятые нормы. {w}Например в обществе принято говорить дамам комплименты, в независимости от того, хочешь ты затащить её в постель, или нет."
         gg "Как-то самонадеянно с твоей стороны рассуждать о наших нормах.{w} Ты полчаса назад языком умывалась."
+
+        show uv pioneer_smile with dissolve
+
         uv "Эй…. мы тут, чтобы изменить твою жизнь, а не мою."
         gg "Как скажешь. И что делать теперь? Или снова решение - за мной?"
         uv "Именно."
         gg "Ульянка говорила, что тут пляж есть. Можно сходить туда.{w} А по дороге закинем штаны туда, где взяли."
         uv "Можно и на пляж. Только, сам понимаешь, мне в воду нельзя."
         gg "Ничего страшного. Объясним твоё аква-воздержание той самой черепно-мозговой травмой."
+
+        show uv pioneer_laugh with dissolve
+        
         uv "Класс, Максик. С комплиментами у тебя идёт туго. {w}Зато врать ты учишься с пугающей скоростью."
 
         play music music_list["sweet_darkness"] fadein 2
 
         scene bg ext_house_of_ggs_day with dissolve
+        $ renpy.pause(1)        
         scene exxt_shower_day with dissolve
+        show uv pioneer_smile at left with dissolve
 
         gg "Я мигом."
         uv "Забей. Кинь прямо тут. Серёга быстрей найдёт."
@@ -1567,18 +1619,21 @@ label dining_hall_scene:
         scene bg ext_square_day with dissolve
         $ renpy.pause(1)
         scene bg ext_beach_day with dissolve
+        show uv pioneer_smile at left with dissolve
 
         uv "Смотри ка. Твоя мамка тут."
         gg "Где?"
         uv "Вон, в тенёчке. Книжку читает. Хе-хе… Теперь понятно, в кого ты такой затворник-книгочей."
         gg "И ничего я не затворник. Я часто выхожу из дома."
+        show uv pioneer_laugh with dissolve
         uv "А если исключить техникум и пьянки?"
         gg "Ну… эм-м-м…"
 
         "Я запнулся, пытаясь вспомнить свои активности, не связанные с алкоголем."
         "И не смог!"
-        "Неужели вся моя активная социальная жизнь - это всего навсего замаскированный алкоголизм?"
+        th "Неужели вся моя активная социальная жизнь - это всего навсего замаскированный алкоголизм?"
         gg "Вот. На речку пришёл."
+        show uv pioneer_smile with dissolve
         uv "Умница! А теперь подойди и пообщайся с девушкой."
 
         show un surprise swim at center with dissolve
@@ -1647,7 +1702,7 @@ label dining_hall_scene:
 
         scene bg ext_beach_day with dissolve
         show un smile swim at center
-        show uv normal pioneer at right
+        show uv pioneer_normal at right
 
         uv "Готово! Можно жить."
         un "Для нас он маловат. Но малыши, может, поместятся."
@@ -1732,7 +1787,7 @@ label dining_hall_scene:
         gg "Угу. {w}Я думаю, если открыть в нашем городе пиццерию - будет много клиентов."
 
         show sl normal pioneer at left
-        show uv normal pioneer at fleft
+        show uv pioneer_smile at fleft
         with dissolve
 
         play music music_list["always_ready"] fadein 2
@@ -1818,7 +1873,7 @@ label dining_hall_scene:
         scene bg ext_beach_day with dissolve
         show sl smile pioneer at center
         show un smile swim at cright
-        show uv smile pioneer at cleft
+        show uv pioneer_smile at cleft
         show sh smile pioneer at fleft
         show el smile pioneer at fright
         
@@ -1886,7 +1941,7 @@ label dining_hall_scene:
         scene bg ext_beach_day with dissolve
         show sl smile pioneer at center
         show un smile swim at cright
-        show uv smile pioneer at cleft
+        show uv pioneer_smile at cleft
         show sh smile pioneer at fleft
         show el smile pioneer at fright
         
@@ -1926,7 +1981,7 @@ label dining_hall_scene:
 
         show sl normal pioneer at center
         show un normal swim at cright
-        show uv normal pioneer at cleft
+        show uv pioneer_smile at cleft
         show sh normal pioneer at fleft
         show el normal pioneer at fright
         
@@ -1967,7 +2022,7 @@ label dining_hall_scene:
         play music music_list["take_me_beautifully"] fadein 2
         
         scene exxt_shower_day with dissolve
-        show uv normal pioneer at center with dissolve
+        show uv pioneer_lagh at center with dissolve
         
         "Я вышел из душа последним. Остальные уже успели ополоснуться и двигались в направлении столовой. Только Юля меня ждала."
         
@@ -2004,7 +2059,7 @@ label dining_hall_scene:
         gg "Кто это?"
         us "Это самая красивая девочка из третьего отряда. После меня конечно.{w} На самом деле, и не особо-то красивая. Просто у неё самые большие сиськи."
         
-        show uv grin pioneer at right with dissolve
+        show uv pioneer_smile at right with dissolve
         
         uv "Это - точно не она.{w} Максику всегда больше жопки нравились, а не сиськи."
 
@@ -2151,33 +2206,45 @@ label dining_hall_scene:
         hide un
         with dissolve
         
-        show uv normal pioneer at center with dissolve
+        show uv pioneer_smile at center with dissolve
         
         gg "Юля, какого чёрта?"
         uv "Что не так?"
         gg "Почему ты меня бросаешь?"
+
+        show uv pioneer_laugh at center with dissolve
+
         uv "Что такое? Крутой парень из криминального района боится провести пару часов с юными девушками?"
         gg "Не в этом дело!"
         uv "А в чём?"
         gg "Ну-у-у… как бы… вдруг я сделаю что-то не так. Нарушу пространственно-временной континуум или вроде того…"
         uv "Вау! Ты смог произнести такую сложную фразу. И даже в ударении не ошибся."
         gg "Юль, я серьёзно. Там будет моя мама и…"
+
+        show uv pioneer_smile at center with dissolve
+
         uv "Вот и отлично. {w}Ты должен поговорить с ней и убедить её…. что ты там хочешь? {w}Стать богатым. Или типа того."
         gg "Да, но как ты себе это представляешь?  В смысле, почему она будет меня слушать?"
         uv "Потому что запала на тебя."
         gg "Что? Не говори ерунды."
         uv "Это - не ерунда. Это - правда."
-        gg "Да с чего ты взяла."
+        gg "Да с чего ты взяла?"
         uv "Это же очевидно. {w} Легко читается по взгляду,{w} по речи,{w} по поведению…"
         gg "Я ничего подобного не заметил."
+
+        show uv pioneer_angry at center with dissolve
+
         uv "Потому что ты - чурбан, а я - внимательная и наблюдательная."
         gg "Стоп!{w} Давай ка определимся. {w} Почему если я вижу от других разные сигналы, то я - озабоченный; а если ты, то ты - наблюдательная?"
+
+        show uv pioneer_smile at center with dissolve
+
         uv "Ха-ха-ха… Вопрос хороший. {w} Навскидку, потому что ты видишь и интерпретируешь сигналы только связанные с сексом. {w}А я смотрю шире."
         uv "И когда я говорю \"запала\" это не значит, что она готова вот прям сейчас задрать юбку и стать раком. {w}Это значит, что ты ей приглянулся.{w} Вот и всё. {w}Новый парень. Необычный, интересный, симпатичный…"
-        gg "гг В каком месте я симпатичный?"
+        gg "В каком месте я симпатичный?"
         uv "И раз ты ей понравился, она будет воспринимать всё сказанное тобой на полном серьёзе. {w}Как сектант от своего гуру."
         gg "Хм-м-м… мы сбились с темы. {w} Почему ты не хочешь идти с нами? "
-        uv "Включи голову, Максик! {w}Младшая сестричка будет мешать романтической обстановке."
+        uv "Включи голову, Максик! {w}Младшая сестричка будет мешать романтической обстановке. Думаешь почему спровадили Ульянку?"
         gg "А тебя…"
         uv "Меня - просто постеснялись. {w}Но с точки зрения девчонок, я - такая же малая и глупая, как Ульянка."
         gg "Снова твоя хвалённая наблюдательность?"
@@ -2185,27 +2252,30 @@ label dining_hall_scene:
         
         play music music_list["dance_of_fireflies"] fadein 2
         
-        scene bg ext_dining_hall_away_day with dissolve
+        scene bg ext_dining_hall_away_sunset with dissolve
         $ renpy.pause(1)
-        scene bg ext_path_day with dissolve
+        scene bg ext_path_sunset with dissolve
         $ renpy.pause(1)
-        scene ext_house_of_ggs_day with dissolve
-
-        scene int_extra_house_dayy with dissolve 
+        scene ext_house_of_ggs_sunset with dissolve
+        $ renpy.pause(1)
+        scene int_extra_house_sunsset with dissolve 
         
-        show uv normal pioneer at center with dissolve
+        show uv pioneer_smile at center with dissolve
         
         gg "Будут ещё какие-нибудь наставления? {w}Или твой юный падаван готов?"
+
+        show uv pioneer_laugh at center with dissolve
+
         uv "Только если \"падаван\" - от слова поддавать. {w}Выжрать пять литров пива ты, конечно, можешь. {w}А вот сразиться с ситхом врядли."
         gg "А если это три ситха, но очень красивых?"
         uv "Потянешь. {w}Главное не доставай световой меч из штанов раньше времени."
         gg "Обещаю"
         
-        scene bg ext_house_of_ggs_day with dissolve
+        scene ext_house_of_ggs_sunset with dissolve
         $ renpy.pause(1)
-        scene bg ext_path_day with dissolve
+        scene bg ext_path_sunset with dissolve
         $ renpy.pause(1)
-        scene bg ext_camp_entrance_day with dissolve
+        scene bg ext_no_bus_sunset with dissolve
         
         show mi normal pioneer at left
         show sl normal pioneer at right
@@ -2229,11 +2299,12 @@ label dining_hall_scene:
         mi "Вроде как и приятно, но всё равно преждевременно. И потом, когда оно будет, то окажется, что тебя уже поздравили, но ощущения уже не те. {w}Даже если повторно поздравить…"
         gg "Мне… надо отойти."
         
-        scene bg ext_path2_day with dissolve
+        scene bg ext_road_sunset with dissolve
+
+        "Чтобы спасти свою психику от такой словесной DDOS-атаки, я немного отошёл."
         
-        "Чтобы спасти свою психику от такой словесной DDOS-атаки, я отправился в лес."
-        
-        scene bg ext_camp_entrance_day with dissolve
+        scene bg ext_no_bus_sunset with dissolve
+
         show mi normal pioneer far at left
         show sl normal pioneer far at right
         
@@ -2249,9 +2320,8 @@ label dining_hall_scene:
         "Славя и Мику всё ещё болтали о чём своём. А я, стоя в сторонке, делал вид что чрезвычайно увлечён статуями двух пионеров. Хотя, на самом деле, полностью равнодушен к такому виду искусства, как скульптура."
         "Ну фигура человека, ну и что?"
         "Ладно была девушка с веслом. Она хотя бы обнажённая. Есть на что посмотреть, что погладить."
-
         
-        scene bg ext_camp_entrance_day with dissolve
+        scene bg ext_no_bus_sunset with dissolve
         show mi normal pioneer at left
         show sl normal pioneer at right
         show un normal pioneer at center
@@ -2277,15 +2347,14 @@ label dining_hall_scene:
         th "Впрочем, возможно люди в прошлом не такие испорченные как я?"
         th "Гендера у них всего два. Секс только после свадьбы. А при слове \"пенис\" - целомудренные дамы падают в обморок."
         
-        scene bg ext_path2_day with dissolve
+        scene bg ext_no_bus_sunset with dissolve
         
         sl "Пойдёмте на полянку, а то уже холодает."
         mi "Точно!{w} Ещё немного - и мои пальчики замёрзнут. И я не смогу играть."
-
         gg "А далеко эта полянка?"
         sl "Совсем рядом. {w}Это ж маленькая. {w}А большая подальше. Но нам сейчас большая ни к чему."
 
-        scene bg ext_clearing_day with dissolve
+        scene bg ext_polyana_sunset with dissolve
         play music music_list["lightness"] fadein 2
 
         "На полянке было две самодельных скамейки. Мику тут же заняла одну и стала наигрывать мелодию."
@@ -2371,7 +2440,9 @@ label dining_hall_scene:
         
         un "Нет."
         
+        scene bg ext_polyana_night with dissolve
         play music music_list["into_the_unknown"] fadein 2
+        show un surprise pioneer with dspr
         
         gg "Ну хорошо. {w}Вот смотри, ты же собралась поступать в … {w}какой-то институт, так?"
         un "Думаю, что в пед.{w} Мне нравится возиться с детишками. {w}Но пока не уверена. {w}Папа очень сильно хочет, чтобы я пошла по его стопам - и стала врачом."
@@ -2466,6 +2537,7 @@ label dining_hall_scene:
         "А Славя достала термос с чаем…"
         
         scene cg campfire with dissolve
+        scene bg ext_polyana_night with dissolve        
         
         "Мы посидели так час или два. Играли, пели, болтали обо всём на свете."
         "Я потерял счёт времени."
@@ -2474,11 +2546,14 @@ label dining_hall_scene:
         "Так необычно."
         "Лена, вслед за ней и Мику начали зевать. Так что мы стали потихоньку собираться."
         
-        scene bg ext_path2_day with dissolve
+        scene bg ext_path2_night with dissolve
         $ renpy.pause(1)
-        scene bg ext_camp_entrance_day with dissolve
+        scene bg ext_no_bus_night with dissolve
         $ renpy.pause(1)
-        scene bg ext_house_of_ggs_day with dissolve
+        scene bg ext_square_night with dissolve
+        $ renpy.pause(1)
+
+        scene ext_house_of_ggs_night with dissolve
         
         show sl smile pioneer at left
         show un smile pioneer at center
@@ -2496,7 +2571,7 @@ label dining_hall_scene:
         hide mi
         with dissolve
         
-        scene bg int_extra_house_night with dissolve
+        scene int_haus_night_off with dissolve
         
         play music music_list["mystery_girl_v2"] fadein 2
         
@@ -2505,7 +2580,7 @@ label dining_hall_scene:
         gg "А почему я тебя не вижу?"
         uv "Обернись"
         
-        show uv grin pioneer at center with dissolve
+        show uv pioneer_laugh at center with dissolve
         
         "Я повернулся и Юля повисла у меня на шее. От неожиданности я упал."
         
@@ -2536,7 +2611,7 @@ label gorod_day_2:
     "(Резко раскрытые веки)"
     "Мне приснился весь вчерашний день? А потом ещё и тот странный лагерь… Сон внутри сна?"
     "(эмбиент уже не лайтовое)"
-    show un surprise pioneer with dissolve
+    show le le2  with dissolve
     gg "Мама?"
     un "Ты какой-то бледный! Не заболел случайно?"
     gg "Не знаю. А ты как-то странно выглядишь…"
