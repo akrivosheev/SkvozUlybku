@@ -4861,6 +4861,8 @@ label start:
             $ depression += 1
             show sl normal pioneer at close_right
             "Чмок!"
+            show sl kiss at center with vpunch
+            play music "<silence 1.0>"
             show sl shy pioneer at right
             show us laugh pioneer at center
             show uv laugh pioneer at left
@@ -4916,6 +4918,8 @@ label start:
             $ depression += 1
             show us normal pioneer at close_center
             "Чмок!"
+            show us kiss at center with vpunch
+            play music "<silence 1.0>"
             show us smile pioneer at center
             show uv laugh pioneer at left
             show sl surprise pioneer at right
@@ -4964,8 +4968,8 @@ label start:
             "Девушки переглянулись."
             uv "На счёт три."
             sl "Раз… два… три…"
-            show uv normal pioneer panties at left
-            show sl normal pioneer panties at right
+            show uv laugh pioneer panties at left
+            show sl shy pioneer panties at right
             show us surprise pioneer at center
             gg "Вау!"
             us "Ничего себе!"
@@ -5008,6 +5012,8 @@ label start:
             $ depression += 1
             show uv normal pioneer at close_left
             "Чмок!"
+            show uv kiss at center with vpunch
+            play music "<silence 1.0>"
             show uv shy pioneer at left
             show us laugh pioneer at center
             show sl surprise pioneer at right
