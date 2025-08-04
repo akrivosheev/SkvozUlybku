@@ -20,6 +20,11 @@ init:
     $ music_up = "/mods/SkvozUlybku/sound/sfx/Radar-1.mp3"   
     #ХЛОПОК ДВЕРИ
     $ dver = "/mods/SkvozUlybku/sound/sfx/hlop.mp3"
+
+    #БГ Квартира с апгрейдом
+    image kvartura_up = "/mods/SkvozUlybku/bg/prolog/kvartura.jpg"
+    #БГ Универ
+    image auditor = "/mods/SkvozUlybku/bg/prolog/auditor.jpg"
     #БГ С ФОНОМ НАСТОЯШЕЙ УЛИЦЫ
     image walk = "/mods/SkvozUlybku/bg/prolog/walk.jpg"
     #ПОДЬЕЗД!
@@ -35,7 +40,7 @@ init:
     #БУЕРАК ПАРОДИЯ 
     $ doomer1 = "/mods/SkvozUlybku/sound/music/prologsong1.mp3"
     #БУЕРАК НАСТОЯЩИЙ
-    $ doomer2 = "/mods/SkvozUlybku/sound/music/buerak.mp3"го
+    $ doomer2 = "/mods/SkvozUlybku/sound/music/buerak.mp3"
     #СУЗУМЕ
     $ suzume = "/mods/SkvozUlybku/sound/music/Katashi_-_suzume_78420725.mp3"
     #СТОЛОВАЯ БГ 
@@ -46,7 +51,7 @@ init:
     image alisa_lowangry = "/mods/SkvozUlybku/image/sprite/al/3.jpg"
     #ЛЕНА
     image le_1 = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le1.png", 0.25)
-    image lena_2 = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le2.png", 0.25)
+    image lena_2 = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le2.png", 0.55)
     image lena_romashki = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le_romashki.png", 0.5)
     #ЮЛЯ
     image uv pioneer_laugh = "/mods/SkvozUlybku/image/sprite/uv/last_uv_grin.png"
@@ -67,9 +72,9 @@ init:
     image uv gaset_sur2 = "/mods/SkvozUlybku/image/sprite/uv/gaset_uv_sur2.png"
     image uv cat6 = "/mods/SkvozUlybku/image/sprite/uv/cat6.png"
     # СОКУРСНИК
-    image so so_sad = "/mods/SkvozUlybku/image/sprite/so/so_sad.png"
-    image so so_smile = "/mods/SkvozUlybku/image/sprite/so/so_smile.png"
-    image so so_sur = "/mods/SkvozUlybku/image/sprite/so/so_sur.png"
+    image so so_sad = im.FactorScale("/mods/SkvozUlybku/image/sprite/so/so_sad.png", 1.8)
+    image so so_smile = im.FactorScale("/mods/SkvozUlybku/image/sprite/so/so_smile.png", 1.8)
+    image so so_sur = im.FactorScale("/mods/SkvozUlybku/image/sprite/so/so_sur.png", 1.8)
 
     #ПАДИК ЖЕНЬКИ
     image zhpad = "/mods/SkvozUlybku/bg/prolog/zhpad.jpg"
@@ -112,7 +117,7 @@ init:
     #ДОМИК ГГ ВНУТРИ ВЕЧЕР
     image int_extra_house_sunsset = "/mods/SkvozUlybku/bg/lager/int_house_of_to_sunsset.jpg"
     #ДОМИК ГГ ВНУТРИ НОЧЬ
-    image int_extra_house_nigght = "/mods/SkvozUlybku/bg/lager/int_extra_house_nigght_7dl.jpg"
+    image int_extra_house_nigght = "/mods/SkvozUlybku/bg/lager/int_house_of_to_nigght.jpg"
     #ДОМИК ГГ ВНУТРИ НОЧЬ ВЫКЛ СВЕТ
     image int_haus_night_off = "/mods/SkvozUlybku/bg/lager/int_haus_night_off.jpg"
     #ДОМИК ГГ СНАРУЖИ ДЕНЬ
@@ -268,6 +273,7 @@ label prologday1:
     th "Привет, красавица! Салат с крабами брать не советую. Меня после него три дня пучило"
     th "Но и выкинуть её из головы я не мог."
     th "Вот такой я романтик."
+    scene auditor with Dissolve (0.5)
     "Первые пары я даже не слушал препода. Просто сидел и прокручивал в голове сцены диалога с ней."
     "Чем ближе подходило время к большому перерыву, тем сильнее я нервничал. Вплоть до дрожи." 
     th "Надеюсь, это хотя бы со стороны не было заметно."
@@ -1307,8 +1313,6 @@ label dining_hall_scene:
     show us smile pioneer with dspr
 
     us "То-то же!"
-
-    show uv normal pioneer at right with moveinright
 
     show uv gaset_laugh with dissolve
 
@@ -2604,16 +2608,14 @@ label gorod_day_2:
     $ prolog_time()
     $ save_name = ('Город. день второй.')
     play music space_song fadein 1
-    scene bg semen_room
-    show unblink
     vm "Сынок, просыпайся. Опоздаешь в колледж."
     gg "Ну, ма-а-а…  Не опаздаю. Мне по пятницам - ко второй."
     vm "Сегодня четверг."
     gg "Четверг? Не может быть?"
-    "(Резко раскрытые веки)"
+    scene kvartura_up
+    show unblink
     "Мне приснился весь вчерашний день? А потом ещё и тот странный лагерь… Сон внутри сна?"
-    "(эмбиент уже не лайтовое)"
-    show le le2  with dissolve
+    show lena_2 with dissolve
     gg "Мама?"
     un "Ты какой-то бледный! Не заболел случайно?"
     gg "Не знаю. А ты как-то странно выглядишь…"
@@ -2632,8 +2634,15 @@ label gorod_day_2:
     "Я огляделся."
     "Моя берлога тоже изменилась."
     "Выглядела посолидней. Нет, это та же самая комната. Но было видно, что обставлена со вкусом. И деньгами."
-    "Гитара, висевшая на стене, была раза в три дороже моей ленинградки. А под гитарой сидела… Юля."
-    show cat6 with dissolve
+    "Гитара, висевшая на стене, была раза в три дороже моей ленинградки. А под гитарой сидела…"
+    transform cat_transform:
+        zoom 0.4
+        xalign 0.7
+        yalign 0.9
+        easein 0.5
+
+    show uv cat6 at cat_transform
+    "Юля"
     "В образе кошки и вылизывала себе лапки."
     "(приблизить этот фрагмент)"
     "Она на секунду остановилась и посмотрела на меня."
@@ -2642,9 +2651,9 @@ label gorod_day_2:
     gg "Погоди, а ты разве к бате не поедешь сегодня?"
     un "Ты точно здоров? Или придуриваешься? Он же в рейсе. Через два дня вернётся."
     gg "Да-да… я здоров. Просто сон, очень странный приснился…"
-    show le le2 with dspr
+    show lena_2 with dissolve
     un "Отлично. Потом расскажешь. А мне пора."
-    hide le le2 with dissolve
+    hide lena_2 with dissolve
     play sound dver
     "Я уставился на кошку"
     uv "Чего смотришь? Корми давай!"
@@ -2669,7 +2678,7 @@ label gorod_day_2:
     "Та ответила недовольным урчанием."
 
     # ВЫХОД НА УЛИЦУ, РАЗГОВОР С ПРОХОЖИМ
-
+    scene walk2 with flash
     $ set_mode_nvl()
     play music suzume fadein 2
     th "Если раньше, выходя из квартиры. Я просто попадал в мрачное неуютное место из другого мрачного и неуютного места. И единственная разница была в температуре. То теперь,  я словно вылез хоббитской норы и оказался в Мордоре."
@@ -2690,14 +2699,13 @@ label gorod_day_2:
     hide sinyak
 
     "(эмбиент мрачняк с оттенком учёбы)"
-    "(фон центр города)"
+    scene auditor with Dissolve (0.5)
     "В техникум я, всё таки, опоздал."
     "Но страшнее то, что меня там совсем не ждали."
     "Ни преподы, ни одногруппники, меня не знали. Что было посерьезней алкаша со двора."
     "Пришлось возвращаться домой и искать документы, откуда я узнал о своём новом месте учёбы."
     "К счастью, оно находилось недалеко от прошлой."
     "А следовательно и от столовой…"
-    "(фон универ)"
     "Знакомство с людьми, которые меня уже неплохо знают, было мягко говоря необычным."
     "Словно тебе отшибло память после грандиозной гулянки и наутро очевидцы рассказывают о твоих приключениях. И, по идее, ты должен в какой-то момент начать всё вспоминать."
     "Но этого момента всё нет и нет."
@@ -2711,7 +2719,6 @@ label gorod_day_2:
     "Я вместе с новой-старой компанией расположился в столовой не на привычном месте, а в углу."
     "О чём сообразил, только когда доедал второе."
     "Столик Алисы был далеко и я тщетно пытался разглядеть рыжие локоны. Даже привстал немного."
-    show sinyak with Dissolve(0.5)
     show so so_smile with dspr
     odn "Кого ты там высматриваешь?"
     gg "Да так…"
@@ -2722,21 +2729,21 @@ label gorod_day_2:
     gg "Откуда?"
     show so so_smile with dspr
     odn "Виделись на одной попойке. Оторва ещё та. В плане выпить. Шнурок с Мишаней уже в зюзю были, а она знай себе - наливает и пьёт."
-    "Фигасе!"
-    "То есть, тихоней она конечно не выглядела, но чтоб вот так лихо расправляться с алкоголем…"
-    "Может, её лучше не кофем угощать, а сразу пивом?"
-    "Или ирландским кофе?"
-    "Такой вот, компромиссный вариант."
-    "Даже можно придумать под это, какой фундамент. Мол брал обычный, а в там что-то напутали и дали ирландский. Не хочешь выпить вместо меня?"
-    "А то мне ещё садится за руль своего БМВ, ага."
-    ""
+    th "Фигасе!"
+    th "То есть, тихоней она конечно не выглядела, но чтоб вот так лихо расправляться с алкоголем…"
+    th "Может, её лучше не кофем угощать, а сразу пивом?"
+    th "Или ирландским кофе?"
+    th "Такой вот, компромиссный вариант."
+    th "Даже можно придумать под это, какой фундамент. Мол брал обычный, а в там что-то напутали и дали ирландский. Не хочешь выпить вместо меня?"
+    th "А то мне ещё садится за руль своего БМВ, ага."
+
     show so so_sur with dspr
     odn "Хошь, познакомлю?"
     "Сокурсник, не дожидаясь ответа, потащил меня к девушке."
     "Я даже не знаю, чем он в большей степени руководствовался: стремлением помочь, желанием приколоться или жаждой движухи."
     show so so_smile with dspr
     odn "Алиса! Привет. Ты знакома с Максимом?"
-    show alisa_shokk with Dissolve(0.3)
+    show alisa_shokk at left with Dissolve(0.3)
     dv "Хм-м-м…Что-то не припомню. Это не тот Максим, который за диван нассал? Хотя, нет. Там был Макар."
     gg "Да. Это определённо был не я."
     odn "За диван Макс не ссал, но однажды на спор обоссал бомжа."
@@ -2766,7 +2773,7 @@ label gorod_day_2:
     gg "Почему?"
     dv "Ты… вы славные ребята. Поэтому не хочется давать вам ложную надежду."
     gg "Надежду на что?"
-    alisa_lowangry
+
     show alisa_smile with Dissolve(0.3)
     dv "А на что ты надеялся когда подходил?"
     gg "Ну… познакомиться. Пообщаться."
@@ -2783,7 +2790,7 @@ label gorod_day_2:
     th "Это я - от волнения ляпнул."
     th "Хорошо, хоть не \"тётя\"."
     hide alisa_lowangry with Dissolve(0.3)
-     $ depr -=1
+    $ depr -=1
     odn "И чё теперь?"
     gg "Ну… не знаю, как ты, а мне надо наведаться к кое-кому."
     odn "Ну бывай. Ты уж прости… что так вышло."
@@ -2953,9 +2960,9 @@ label gorod_day_2:
     gg "Я готов! Погоди… что значит…."
     "Договорить я не успел, потому Юля прыгнула мне на плечо и свет погас."
    
-stop music fadeout 2
+    stop music fadeout 2
     scene black
-label day_2_su:
+    label day_2_su:
     $ day_time()
     $ new_chapter(5, u"День 2")
     "..."
@@ -3002,7 +3009,7 @@ label day_2_su:
     uv "Это они тебе сказали?"
     gg "Не напрямую."
 
-    show uv pioneer_sur at center with dissolve
+    show uv pioneer_smile at center with dissolve
     uv "А как? {w}Не упали в обморок при виде тебя?{w} Или не встали на колени и начали сосать."
     gg "Хм-м-м…"
     uv "Эй, эй! Хватит фантазировать. {w}Нам надо на линейку. {w}И не хотелось бы, что бы ты отсвечивал там своей эрекцией."
@@ -3016,16 +3023,20 @@ label day_2_su:
 
     show uv pioneer_normal at center with dissolve
     uv "Надо смотреть на вещи шире.{w} По крайней мере, пока ты маршируешь и голова забита простыми приказами - у тебя нет времени на самобичевание."
-    uv "Старинное народное средство от депрессии - строевая подготовка. Попробуешь муштру - забудешь про хандру."
+    th "Старинное народное средство от депрессии - строевая подготовка. Попробуешь муштру - забудешь про хандру."
 
+    scene ext_house_of_ggs_day with dissolve
+    $ renpy.pause(1)    
     scene ext_path_day with dissolve
+    $ renpy.pause(1)    
     scene ext_square_day with dissolve
+    $ renpy.pause(1)
 
     play music "sound/music/she_is_kind.ogg" fadein 3
 
-    show sl smile pioneer at left
-    show mt smile pioneer at right
-    with dissolve
+    show sl smile pioneer at left with dissolve
+    show mt smile pioneer at right with dissolve
+    show uv pioneer_smile with dissolve    
 
     mt "А вот и наши новички!{w} Молодцы. Почти раньше всех пришли."
     sl "И это вдвойне хорошо, потому что сегодня именно вы будете поднимать флаг."
@@ -3038,13 +3049,17 @@ label day_2_su:
     gg "Ага."
     th "Младшим уступать, старшим помогать… А если захочешь кому-нибудь втащить, то для этого есть ровесники."
     th "А вот и они."
+    hide sl
+    hide mt
+    hide uv
 
-    show un smile pioneer at farleft
-    show mi smile pioneer at left
-    show sh normal pioneer at center
-    show el smile pioneer at right
-    show us grin pioneer at farright
-    with dissolve
+    show un smile pioneer far at cleft with dissolve
+    show mi smile pioneer far at left with dissolve
+    show sh normal pioneer far at center with dissolve
+    show el smile pioneer far at right with dissolve
+    show us grin pioneer far at cright with dissolve
+    show sl smile pioneer far at fright with dissolve
+    show uv pioneer_smile far at fleft with dissolve
 
     mt "Ну вот. Весь отряд в сборе. Можно начинать."
     th "И это весь отряд?"
@@ -3100,6 +3115,10 @@ label day_2_su:
     gg "Практически. {w}Либо из порнухи, либо из Симпсонов."
     uv "Это многое объяняет."
 
+    scene ext_dining_hall_away_day with dissolve
+    $ renpy.pause(1)
+    scene bg int_dining_hall_people_day with dissolve
+
     show us grin pioneer at right with dissolve
     us "Приветики-омлетики. {w}О чём секретничаете?"
 
@@ -3117,9 +3136,7 @@ label day_2_su:
     "Железная логика."
     "По ней отличники значительно старше двоечников. А докторам наук вообще положена пенсия."
 
-    scene ext_dining_hall_away_day with dissolve
-
-    show us smile pioneer at center with dissolve
+    show us smile pioneer at right with dissolve
 
     play music "sound/music/my_daily_life.ogg" fadein 3
 
@@ -3132,24 +3149,24 @@ label day_2_su:
 
     us "Смотри сама. Ух ты… а вот и омлетики! {w}Как я и предсказывала."
 
-    show sl smile pioneer at left with dissolve
+    show sl smile pioneer at center with dissolve
     sl "Тут омлеты каждый второй день.{w} С тем же успехом, ты могла утром предсказать вечер."
 
     show us angry pioneer at right with dissolve
     us "Не лезь, косатая! {w}Я тут, между прочим, убедительно доказываю, что мальчишки - глупее девчонок."
 
-    show sl laugh pioneer at left with dissolve
+    show sl laugh pioneer at center with dissolve
     sl "Через омлеты?"
-    gg "Ага. {w}Глупые петухи только горло драть умеют, а умные курицы, вон, яйца несут. Из которых омлет можно сделать."
+    us "Ага. {w}Глупые петухи только горло драть умеют, а умные курицы, вон, яйца несут. Из которых омлет можно сделать."
     sl "Так значит весь женский ум сосредоточен в яичниках?"
 
-    show us surprise pioneer at right with dissolve
+    show us surp1 pioneer 
     us "В чём?"
     gg "Вот вам и \"учатся лучше\"."
 
-    show us angry pioneer at right
-    show sl laugh pioneer at left
-    show uv pioneer_laugh at center
+    show us angry pioneer at right with dissolve
+    show sl laugh pioneer at center with dissolve
+    show uv pioneer_laugh at left with dissolve
     with dissolve
 
     us "У нас ещё не было анатомии! {w}А судя по вашей реакции, это какая-то пошлятина!"
@@ -3159,7 +3176,7 @@ label day_2_su:
     th "На каждый пример успешного и выдающегося мужчины можно ответить, что родила-то его женщина."
     th "Отсюда и смещение акцентов поклонения с Иисуса на деву Марию. Или со спасителя Джона Коннора на его мать, официантку Сару…"
 
-    show sl normal pioneer at left with dissolve
+    show sl normal pioneer at center with dissolve
     sl "Давайте лучше, о чём-нибудь другом поговорим."
 
     show us normal pioneer at right with dissolve
@@ -3170,10 +3187,10 @@ label day_2_su:
     uv "За любые идеи. {w}Готовы поучаствовать в любых мероприятиях и начинаниях! {w}Хотим всё узнать и всё попробовать."
     sl "Молодцы! {w}Ну у нас в самом деле много чего есть посмотреть. Пляж вы уже видели. Там рядышком лодочная станция, оттуда тоже хорошие виды. {w}Но ещё лучше если поплыть на острова. Там ещё красивее."
 
-    show uv pioneer_laugh at center with dissolve
+    show uv pioneer_laugh at left with dissolve
     uv "Вот это да! Поплыли, поплыли…"
 
-    show sl smile pioneer at left with dissolve
+    show sl smile pioneer at center with dissolve
     sl "Тише-тише… {w} Это лучше сделать после обеда. Путь до островов неблизкий: надо взять с собой перекус. Так что надо будет согласовать не только с Ольгой Дмитриевной, но и с поваром."
     us "А до обеда чем займётесь?"
     sl "Лично я обещала помочь с малышами. Будем репетировать торжественный марш на площади."
@@ -3183,7 +3200,7 @@ label day_2_su:
     sl "Во что хотите! У нас там есть и футбольные ворота и баскетбольные сетки… Тебе что больше нравится?"
     uv "Мне всё нравится."
 
-    show sl laugh pioneer at left with dissolve
+    show sl laugh pioneer at center with dissolve
     sl "Я не сомневалась. Ну а тебе, Максим?"
     gg "Мне? Э-э-э…. шахматы."
     sl "Ну тут я тебе не помощник. Шахматы, кажется, были в библиотеке. Но вот с игроками сложнее. Боюсь, вам придётся довольствоваться друг другом."
@@ -3194,27 +3211,28 @@ label day_2_su:
     gg "Ай! Ладно, поиграем в другой раз. А пока можно и во что-нибудь другое…"
     sl "Ну и славненько. Да… Не забудте позвать Лену. Ей будет приятно…"
 
-    show uv pioneer_sur at center with dissolve
+    show uv pioneer_sur at left with dissolve
     "Юля пристально посмотрела на меня."
     "Проверяя, не увидел ли я и в этой фразе какую-нибудь пошлость."
     gg "Конечно. Чем больше народа, тем лучше."
 
     hide sl with dissolve
+    hide us with dissolve    
 
     th "Отлично. И по ходу дела надо будет внушить маме, что если у неё родится мальчик, то надо будет отдать его в спорт. Такой, чтоб крепким стал, ага. И желательно не такой, в котором периодически по голове стучат. Или на ногу наступают."
     th "Мне для этого и дворовых приключений хватает. Пару раз прилетело за то, что у приятеля была футболка с \"неправильной\" музыкальной группой."
 
-    show uv pioneer_smile at center with dissolve
+    show uv pioneer_smile at left with dissolve
     uv "Ну что? Раунд два. Есть план?"
     gg "В общих чертах. Сейчас подойдём к Ле…э-э-э… к маме. Пригласим поиграть с нами. Ну, скажем, в теннис."
 
-    show uv pioneer_sad at center with dissolve
+    show uv pioneer_sad at left with dissolve
     uv "М-да-а-а…"
     gg "Что? Тяжело воспринимать её, как мать, когда она такая… молодая."
     uv "Я - не про твой Эдипов комплекс. Я про выбор игры. Ну какой теннис?"
     gg "А что не так? Хорошая игра… Тут тебе и обще-физическая подготовка. И реакция. И по голове никто не стучит…"
 
-    show uv pioneer_angry at center with dissolve
+    show uv pioneer_angry at left with dissolve
     uv "А если подумать? Во-первых, как мы втроём будем играть в игру на двоих?"
     gg "Можно меняться, или четвёртого позвать."
     uv "Во-вторых, твоя мама даже для волейбола слишком мягкая. А теннис ещё более скоростной вид спорта."
@@ -3224,26 +3242,24 @@ label day_2_su:
     "Я вздохнул, придавленный железными аргументами своей псевдо сестрички."
     gg "Значит бадминтон?"
 
-    show uv pioneer_normal at center with dissolve
+    show uv pioneer_normal at left with dissolve
     uv "Значит бадминтон."
     th "Он ведь намного более командный."
 
     play music "sound/music/lets_be_friends.ogg" fadein 3
 
-    "Эмбиент: Let's Be Friend's"
-
-    show un shy sport at right with dissolve
+    show un shy pioneer at right with dissolve
     show uv pioneer_laugh at left with dissolve
     uv "Лена! Привет ещё раз. Мы не помешали?"
 
-    show un shy sport at right with dissolve
+    show un shy pioneer at right with dissolve
     un "Н-нет. Я уже кончила…. закончила кушать."
 
     "Хорошо, что мы не сидели за столом. А иначе Юля снова бы прочитала мои мысли и снова наступила на ногу."
 
     uv "А мы с Максиком собрались в бадминтон поиграть. Хочешь с нами?"
 
-    show un surprise sport at right with dissolve
+    show un surprise pioneer at right with dissolve
     un "Я? Но я… совсем не умею в него играть."
     uv "Ну и что? Я тоже не умею. Будем вместе учиться."
     un "А ты, Максим? Тоже не умеешь?"
@@ -3254,7 +3270,7 @@ label day_2_su:
     th "Гораздо сложнее придумать, как под соусом жалкого бадминтона убедить Лену в важности спорта?"
     th "Спасибо, хоть не бальные танцы…"
 
-    show un normal sport at right
+    show un normal pioneer at right
     show uv pioneer_normal at left
     with dissolve
 
@@ -3306,7 +3322,7 @@ label day_2_su:
 
     gg "Ладно, давай действовать. Форма должна быть на складе. Мы его найдём, а потом воспользуемся твоими звериными навыками. Ты как-нибудь залезешь через форточку или вентиляцию…"
 
-    show uv pioneer_angry at center with dissolve
+    show uv pioneer_smile at center with dissolve
     uv "А как насчёт воспользоваться человеческими навыками."
     gg "Это которыми?"
     uv "Речью!"
@@ -3526,7 +3542,8 @@ label day_2_su:
     un "А мне нравится… ой!"
     show un shy sport at center
     un "Форма. Форма! Форма ваша нравится…"
-    show el shy sport at left, uv smile at right
+    show un shy sport at left
+    show uv pioneer_smile at right
     uv "Ничего, Макси. от заикания мы тебя вылечили. Теперь будем лечить от дрищавости. Процесс, конечно, более долгий. Зато результат более впечатляющий. Правда, Лена?"
     un "Я… не знаю."
     uv "А я знаю. Мне всегда нравились сильные парни. Да и не только мне. Все античные герои были с кубиками пресса."
@@ -3541,12 +3558,13 @@ label day_2_su:
 
     play music "sound/music/what_do_you_think_of_me.ogg" fadein 3
 
-    scene bg path with dissolve
+    scene ext_path_day with dissolve
     gg "И что? Даже не будешь язвить по поводу моего выбора?"
-    show uv smile at center
+    show uv pioneer_smile at center
     uv "С чего мне язвить. ну кроме твоего косноязычия. Правильно говорить \"красивее\"."
     gg "Ну как же… Можно упрекнуть меня в \"лукизме\"."
-    show uv laugh at center
+    
+    show uv pioneer_laugh at center
     uv "В чём? Максимка, ты бы лучше сперва родной язык прокачал, чем новые слова выдумывать."
     gg "Лукизм - это от английского \"лук\". Смотреть. Так говорят про людей, которые обращают внимание на внешность."
     uv "Ты так говоришь, как будто - это плохо. Тебе понравилась девушка, вполне нормально, что ты желаешь побольше проводить с ней время. Это нормальная реакция здорового парня."
@@ -3561,11 +3579,11 @@ label day_2_su:
     gg "Пионерскую, ага. И галстуки разного цвета. Чтобы хоть как-то отличать девушек."
     uv "Достаточно разного цвета волос. Брюнетки, шатенки, рыжие…"
 
-    scene bg square with dissolve
+    scene bg ext_square_day with dissolve
     show sl smile sport far at center
     gg "И блондинки."
     "Девушка выполняла упражнения, а несколько десятков маленьких детей усердно за ней повторяли."
-    show uv smile at right
+    show uv pioneer_smile at right
     "Юля помахала Славе рукой, а та, не сбиваясь с ритма, помахала в ответ."
     uv "Пошевеливайся."
     gg "Погоди. Пусть сперва закончат."
@@ -3573,17 +3591,18 @@ label day_2_su:
     gg "Неудобно, как-то, мешать…"
     uv "С чего это ты такой заботливый стал? Или просто ждёшь, пока она не начнёт упражнения с нагибаниями делать?"
     gg "А это, кстати, мысль."
-    show uv angry at right
+    show uv pioneer_angry at right
     uv "Цыц!"
-    show uv normal at right
+    show uv pioneer_smile at right
     uv "Славя!"
     show sl surprise sport at center
     sl "Да?"
-    show uv smile at right
+    show uv pioneer_smile at right
     uv "Можно тебя на секундочку?"
     show sl normal sport at center
     sl "Конечно! Ребята, а теперь четыре круга вокруг площади шагом-марш."
     "Детишки нестройным маршем пошли по периметру."
+    show sl smile sport at center    
     uv "Мы тут неожиданно осознали, что у нас нет спортивной формы. Может ты сможешь помочь с этим?"
     show sl happy sport at center
     sl "С радостью! Вам какая форма нужна?"
@@ -3630,13 +3649,13 @@ label day_2_su:
     "Сердце стало биться быстрее, но усилием воли я успокоил свой моторчик:"
     th "Юля сказала, что касания ничего не значат. Девушка просто выразила свою благодарность за понимание\"."
 
-    scene bg ext_storage with dissolve
+    scene bg int_clubs_male2_night with dissolve
     sl "Вот и склад. За три минуты дошли."
     gg "Потому что… быстро ехали."
     show sl laugh sport at center
     sl "Точно!"
 
-    scene bg int_storage with dissolve
+    scene bg int_clubs_male2_night with dissolve
     show sl normal sport at center
     sl "Сейчас что-нибудь подберём."
     "Пока девушка рылась в коробках я огляделся."
@@ -3657,7 +3676,7 @@ label day_2_su:
     show sl shy sport at center
     sl "Да-да… давай так."
 
-    scene bg ext_storage with dissolve
+    scene bg int_clubs_male2_night with dissolve
     th "Кто бы мог подумать, что поход за какими-то шмотками приведёт к таким неловкостям?"
     "Мы молчали всё обратную дорогу."
     "Лично я молился, чтобы румянец у Слави пропал раньше, чем мы доберёмся до площади. Иначе неприятного разговора с Юлей не избежать."
@@ -3667,12 +3686,12 @@ label day_2_su:
 
     play music "sound/music/always_ready.ogg" fadeout 1 fadein 1
 
-    scene bg square with dissolve
-    show uv smile far at center
+    scene bg ext_square_day with dissolve
+    show uv pioneer_smile far at center
     "Действительно. Ребята шли куда чётче и слаженней, чем когда мы уходили."
     "Заметив нас, Юля отдала команду:"
     uv "На месте стой. Раз, два!"
-    show uv smile at center
+    show uv pioneer_smile at center
     uv "А вы быстро! Молодцы."
     show sl happy sport at right
     sl "А ты здорово обращаешься с детьми."
@@ -3680,11 +3699,11 @@ label day_2_su:
     show sl laugh sport at right
     "Я весь напрягся. Но слава Богу, Славя восприняла слова Юли, как шутку."
     sl "Это же не котята!"
-    show uv laugh at center
+    show uv pioneer_laugh at center
     uv "Как посмотреть. Вот этот, например, очень похож на котика."
     "\"Сестрица\" погладила по голове ближайшего мальчика и тот довольно улыбнулся. Продемонстрировав полу беззубую улыбку."
     sl "Только усов не хватает."
-    show uv smile at center
+    show uv pioneer_smile at center
     uv "Это что, моя форма? Спасибо, спасибо…"
     show sl laugh sport at right
     sl "Незачто."
@@ -3694,27 +3713,27 @@ label day_2_su:
     sl "И тебе \"незачто\"."
     hide sl
 
-    scene bg path with dissolve
-    show uv smile at center
+    scene bg ext_path_day with dissolve
+    show uv pioneer_smile at center
     uv "Поторапливайся, ленивая задница!"
     gg "Полегче! Я даже не знаю в какую сторону идти."
     uv "Ты что? Не запомнил, где спортивная площадка, когда тебе рассказывали про лагерь."
     gg "Нет. Как только кто-то начинает говорить про спорт, у меня отключается мозг."
-    show uv laugh at center
+    show uv pioneer_laugh at center
     uv "Или когда когда красивая девушка попадает в поле зрения. Или когда пару литров пива попадает в желудок. По-моему, твой мозг просто ищет повод чтобы отключиться."
     gg "Между прочим, есть теория, согласно которой наш мозг, а именно его лобное доля - не более чем инструмент. Чтобы у человека была иллюзия, что он самостоятельно принимает решения. Хотя на самом деле он, как все животные, действует инстинктивно. А сознание лишь придумывает причину, почему мы так поступили, задним числом."
-    show uv angry at center
+    show uv pioneer_normal at center
     uv "Удобная теория для неудачников. Снимает всякую ответственность за их никчемную жизнь."
     th "Вот сейчас обидно было."
     th "Я - неудачник, только если сравнивать меня с парнями, у которых стартовые условия, не в пример лучше моих. А так, в своём ареале, у меня более менее всё удачно складывалось."
-    show uv normal at center
+    show uv pioneer_smile at center
 
     play music "sound/music/two_glasses_of_melancholy.ogg" fadeout 1 fadein 1
 
-    scene bg sport_area with dissolve
+    scene bg ext_playground_day with dissolve
     show un normal sport at center
     "Лена уже ждала нас. У неё была смешная спортивная форма, которая, тем не менее, ей шла."
-    show uv smile at right
+    show uv pioneer_smile at right
     uv "Прости, что задержались. Никак не могли подобрать Максику нужный размер."
     show un shy sport at center
     un "Ничего страшного."
@@ -3724,7 +3743,8 @@ label day_2_su:
     th "Угу."
     th "Причём смирительная."
     th "И в плечах хорошо сидит. А что рукава длинные - так не беда. Всегда можно за спиной аккуратно завязать."
-    show un shy sport at left, uv laugh at right
+    show un shy sport at left
+    show uv pioneer_laugh at right
     uv "Ничего, Макси. от заикания мы тебя вылечили. Теперь будем лечить от дрищавости. Процесс, конечно, более долгий. Зато результат более впечатляющий. Правда, Лена?"
     un "Я… не знаю."
     uv "А я знаю. Мне всегда нравились сильные парни. Да и не только мне. Все античные герои были с кубиками пресса."
@@ -3734,7 +3754,7 @@ label day_2_su:
     uv "Ладно. Мы побежали переодеваться. Одна нога здесь, другая там."
     show un smile sport at left
     un "Хорошо. Я вас тут подожду."
-    show uv smile at right
+    show uv pioneer_smile at right
     uv "Шевелись, Макси. Тренировка начинается с раздевалки так же, как театр начинается с вешалки."
     hide uv
     hide un
@@ -3749,8 +3769,9 @@ label day_2_su:
 label merge_point:
     play music "sound/music/so_good_to_be_careless.ogg" fadeout 1 fadein 1
 
-    scene bg sport_area with dissolve
-    show un smile sport at left, uv smile sport at right
+    scene bg ext_playground_day with dissolve
+    show un smile sport at left
+    show uv pioneer_smile at right
     "Наконец-то сама игра."
     "Ракетки, воланчики и смутные правила."
     "Девушки находили всю эту неразбериху забавной и то и дело хохотали над собственными промахами. Над мои тоже."
@@ -3761,9 +3782,10 @@ label merge_point:
     th "По сути, живое воплощения тех премудростей, о которых говорила."
     th "Будет обидно, если выяснится, что на самом деле она всего лишь плод моего воображения."
 
-    play sound "sound/music/dinner_bell.ogg"
+    play sound sfx_dinner_horn_processed
     "Мы так увлеклись игрой, что сигнал на обед практически застал нас врасплох."
-    show un happy pioneer at left, uv happy pioneer at right
+    show un happy pioneer at left
+    show uv pioneer_smile at right
     "Лена облегченно вздохнула."
     "Я так понял, она давно выдохлась но виду не показывала."
     "Юля наоборт, хотела продолжать. Но любовь к еде оказалась сильнее."
@@ -3783,25 +3805,29 @@ label merge_point:
 
     scene bg path with dissolve
     scene bg int_dining_hall_day with dissolve
-    show un smile pioneer at left, uv smile pioneer at right, mt normal far at center
+    show un smile pioneer at left
+    show uv pioneer_smile pioneer at right
+    show mt normal far at center
     "Несмотря на спешку, в столовую мы пришли самыми последними. Еда уже подостыла, а вожатая выразительно показала пальцем на часы. И, что обидно, смотрела в тот момент именно на меня. Хотя опоздали мы втроём."
     "Я виновато развёл руками."
 
     play music "sound/music/two_glasses_of_melancholy.ogg" fadeout 1 fadein 1
 
     hide mt
-    show un normal pioneer at left, uv normal pioneer at right
+    show un normal pioneer at left
+    show uv pioneer_normal at right
     uv "Надо признаться, кормят тут не важно."
     th "Что есть - то есть."
     th "Смотря с чем сравнивать, конечно. Если с нашей столовой, то лучше. А если с маком или KFC, то хуже."
     un "Просто с поваром не повезло. В прошлую смену тут намного лучше готовили."
     uv "Типа, не опытный?"
     gg "Или наоборот, слишком опытный. Половину себе в карман. Что осталось - детишкам."
-    show un sad pioneer at left, uv angry pioneer at right
+    show un sad pioneer at left
+    show uv angry pioneer at right
     "Моё циничное замечание не понравилось девушкам."
     th "Ну да. Приехал мрачный мизантроп из Челябинска в страну розовых пони и всё испортил."
     th "Сейчас научу их ругаться матом и пить водку."
-    show uv normal pioneer at right
+    show uv pioneer_normal at right
     uv "Ты бы лучше белОк так лихо ел, как язвишь."
     show un surprise pioneer at left
     un "Почему именно белОк?"
@@ -3809,13 +3835,13 @@ label merge_point:
     show un normal pioneer at left
     un "Папа говорил, что стал сильным после армии."
     th "Как же… Дед ещё рассказывал, что в армии чуть ли не в первый раз в жизни попробовал мясо. Его потом всем семейством ездили уговаривать вернуться."
-    show uv laugh pioneer at right
+    show uv pioneer_laugh pioneer at right
     uv "Не… Максику в армию нельзя. Он слишком привередливый к еде. Да и к правилам слишком вольно относится. Как там про тебя школьная психолог написал? \"Не признаёт авторитетов\"."
     th "Всё страннее и страннее."
     th "Такое ощущение, что Юля знает про меня - больше меня самого."
     show un surprise pioneer at left
     un "Вообще никаких?"
-    show uv smile pioneer at right
+    show uv pioneer_smile pioneer at right
     uv "Только Илон Маск и топовые голливудские звёзды. Вот кстати…"
     uv "Максик, если хочешь выглядеть, как Тор, то надо тренироваться, как Крис Хемсворт. Если хочешь выглядеть, как Капитан Америка, то надо тренироваться, как Крис Эванс. Если хочешь выглядеть, как Звёздный Лорд, то надо тренироваться, как Крис Пратт… ну и так далее"
     th "Мама удивлённо смотрела то на меня, то на Юлю. В её глазах читался немой вопрос: \"Кто все эти люди?\""
@@ -3823,9 +3849,9 @@ label merge_point:
 
     th "Надеюсь, что этот разговор она забудет к тому времени, как услышит их в будущем."
     gg "Да понял я. Отстань!"
-    show un shy pioneer at center
+    show un shy pioneer at left
     un "Ну мы же собрались на острова…"
-    show uv normal pioneer at right
+    show uv pioneer_normal at right
     uv "И?"
     un "Если Максим будет грести… А это считай та же тренировка, то…"
     "Лена замялась, не зная, как закончить фразу"
@@ -3842,7 +3868,10 @@ label merge_point:
     th "Тогда название \"станция\" слишком самонадеянное. С тем же успехом обладатель одной редкой монеты может считаться коллекционером."
 
     scene bg ext_dining_hall_near_day with dissolve
-    show sl normal pioneer at left, us normal pioneer at cleft, un normal pioneer at center, uv normal pioneer at right
+    show sl smile pioneer at left
+    show us smile pioneer at cleft
+    show un smile pioneer at center
+    show uv pioneer_smile at right
     sl "Наконец-то и вы. Мы уже заждались."
     sl "Мы что, прямо сейчас отправимся?"
     th "Блин!"
@@ -3859,14 +3888,14 @@ label merge_point:
     scene bg ext_path_day with dissolve
     scene bg ext_boathouse_day with dissolve
 
-    show us grin swim at center
+    show us grin pioneer at center
     us "Чур, я первая!"
     "Девочка растолкала остальных и ловко запрыгнула в лодку."
     "За ней последовала Славя."
     "Вероятно, не пожелавшая оставить маленькую хулиганку без присмотра."
-    show sl smile swim at right
+    show sl smile pioneer at right
     sl "Не скучайте, девочки. Мы быстро."
-    show us laugh swim at left
+    show us laugh pioneer at center
     us "Первый экипаж к отплытию готов! Отдать швартовы!"
     "Примерно в таком духе Ульянка вела себя на протяжении всего пути. Бросалась морскими терминами, кривлялась, командовала и угрожала бросить нас за борт на корм акулам. И требовала называть себя капитаном."
     th "Словно внебрачная дочка Джека Воробья и безымянной рыжей проститутки."
@@ -3875,35 +3904,45 @@ label merge_point:
     hide sl
     hide us
     "По крайней мере, обратно мне плылось не сильно напряжно. Тем более вес у лодки без пассажиров был меньше."
-    show un normal swim at left, uv normal swim at right
+    show un smile pioneer at left
+    show uv pioneer_smile at right
     "А вот когда Лена и Юля погрузились и я сделал пару взмахов, то спина протестующе заныла."
     "Девушки тихонько щебетали о чём-то своём и не замечали, с какой медленной скоростью мы движемся. Или делали вид, что не замечали."
-    show uv angry swim at right
+    show uv pioneer_normal at right
     uv "Макс, ты можешь грести энергичней?"
     th "Ну во-о-от. Накаркал."
-    show un serious swim at left
+    show un pioneer normal at left
     un "Не стОит."
-    show uv surprise swim at right
+    show uv pioneer_sur at right
     uv "Почему?"
     un "Как только мы приплывём, то Славя сразу найдёт для нас работёнку."
     gg "Какую? Мы же туда отдыхать плывём. Не?"
-    show un smile swim at left
+    show un smile pioneer at left
     un "Вы, просто, плохо знаете Славю. Она всегда ищет общественно-полезные занятия. И таки находит!"
-    show uv normal swim at right
+    show uv pioneer_smile at right
     uv "Какие тут могут быть занятия? Это же остров!"
 
     scene bg ext_island_day with dissolve
     show sl normal pioneer at center
+    show us normal swim at center
+    
     "Но Юля ошиблась и занятия действительно нашлись."
     "Стоило нам причалить, как Лена и Юля были отправлены за дровами. А меня запрягли разламывать и сортировать то, что уже успели насобирать девочки."
     "А когда я справился и рухнул отдыхать под дерево, откуда ни возьмись прискакала Ульянка и потянула меня купаться."
     "Так как у меня не было сил не только сопротивляться, но даже спорить, то пришлось лезть в воду."
 
-    scene cg us_swimming with dissolve
+    hide sl
+    hide uv
+    hide un
+    
+    show us laugh swim at center    
     "Там я был не более активным, чем на суше. Но хотя бы развлёк малую в качестве мишени для брызганья и пьедестала для прыжков."
 
     scene bg ext_island_day with dissolve
-    show sl normal pioneer at left, un normal pioneer at center, uv normal pioneer at right, us normal swim at cleft
+    show sl normal pioneer at left
+    show un smile pioneer at center
+    show uv pioneer_smile at right
+    show us normal swim at cleft
     "Когда мы вышли, девчата уже разожгли костёр и что-то жевали."
     "Как выяснилось, Лена наткнулась на полянку с земляникой. А Юля так вообще нашла полдюжины грибов."
     "И сейчас старательно мастерила шампуры из прутиков."
@@ -3919,26 +3958,31 @@ label merge_point:
     play music "sound/music/sweet_darkness.ogg" fadeout 1 fadein 1
     hide blink
     show unblink
-    show uv angry pioneer close at center
+    hide sl
+    hide us
+    hide un
+    show uv pioneer_smile at center
     "Открыв глаза я увидел свою названную сестричку."
     uv "Макс! Макс! Хорош дрыхнуть, лежебока! Сейчас без тебя всё съедим."
     gg "Что \"всё\"?"
     uv "Всё."
-    show sl normal pioneer far at left, un normal pioneer far at center, us normal swim far at right
+    show sl smile pioneer far at left
+    show un smile pioneer far at right
+    show us smile swim far at cleft
     "Девочки сидели вокруг костра и жарили хлеб."
     gg "То есть меня разбудили даже не ради сосисок. Я уж молчу про шашлык. А ради жалких тостов."
-    show uv normal pioneer close at center
+    show uv pioneer_normal at center
     uv "Ты что сюда, жрать приехал? Вон твоя цель! Справа."
     "Я посмотрел на Лену."
     "Она дула на подгоревший кусочек."
-    show un smile pioneer far at center
+    show un laugh pioneer far at right
     "Заметив мой взгляд, девушка улыбнулась."
     gg "Да-да… я помню. Сейчас подойду и мы на пару начнём задвигать спич про вредные углеводы и полезные белки."
-    show uv normal pioneer close at center
+    show uv pioneer_normal at center
     gg "Даже повод искать не нужно. Хлеб вреден. Мясо полезно. Надо было отправить Славю за куриной грудкой."
     uv "Так вот почему ты мою грудь пялился. Я-то думала, что ты извращенец. А ты оказывается, просто, голодный."
     gg "Вариант, что она красивая, ты не рассматриваешь?"
-    show uv shy pioneer close at center
+    show uv pioneer_sur at center
     uv "Максим. Ты… это… не смущай меня. Я же всё таки наполовину женщина."
     th "А на вторую половину кто?"
     th "Она же не прекращает быть самкой."
@@ -3946,7 +3990,10 @@ label merge_point:
     th "Хотя, вроде бы, ничто не мешало. Неужели отрастить член тяжелей, чем отрастить крылья или волчью пасть?"
     th "Видать, всё дело в подсознании. Разделение на гендеры произошло раньше чем появился человек. \"Мальчики налево, девочки направо\", кажись, ещё у одноклеточных появилось."
 
-    show sl normal pioneer at left, un normal pioneer at center, uv normal pioneer at right, us normal swim at cleft
+    show sl normal pioneer at left
+    show un smile pioneer at right
+    show uv pioneer_normal at center
+    show us normal swim at cleft
 
     menu:
         "Сесть рядом с Леной":
@@ -3967,7 +4014,7 @@ label sit_with_slava:
     jump after_sit_choice
 
 label after_sit_choice:
-    show uv smile pioneer at right
+    show uv pioneer_smile pioneer at center
     uv "Хорошо сидим."
     show sl smile pioneer at left
     sl "Жалко гитары нет. Так бы ещё спели."
@@ -3975,25 +4022,30 @@ label after_sit_choice:
     us "Тогда в следующий раз возьмём с собой гитару."
     gg "Лучше сразу Мику берите."
     th "Зачем покупать завод, если можно купить директора?"
-    show uv grin pioneer at right
+    show uv pioneer_laugh at center
     uv "Только тогда тебе придётся три раза на веслах быть."
     gg "Или найти локацию поближе. В лесу где-нибудь."
-    show uv laugh pioneer at right
+    show uv pioneer_smile at center
     uv "Макси, ты проявляешь просто феноменальную изворотливость, когда надо хоть немного напрячься. Как Антошка из той песенки. Не хочу ни копать картошку, ни играть на гармошке…"
-    show sl smile pioneer at left, un smile pioneer at center, us laugh swim at cleft
+    show sl smile pioneer at left
+    show un smile pioneer at right
+    show us laugh swim at cleft
     us "Антошка, Антошка! Пойдём копать картошку…"
-    show uv smile pioneer at right
+    show uv pioneer_laugh at center
     uv "Надо только слова подправить: Максимка, Максимка! Сыграй нам на…"
     uv "Резинке!"
     th "Я представил, что пытаюсь исполнить мелодию на натянутом, как струна презервативе."
     th "Получилось что-то вроде народной музыки эвенков."
     th "Забавно, конечно. Но народ в массе своей не оценит."
-    show un shy pioneer at center
+    show un shy pioneer at right
     un "Я лично не против сходить в лес. И там хотя бы комаров поменьше."
-    show uv angry pioneer at right
+    show uv pioneer_normal at center
     th "Что это с Юлей?"
     th "Неужели ждала от меня какого-нибудь неуместного комментария. Про то, что комары \"сосут\" или про то, что пьют кровь лишь самки."
-    show sl normal pioneer at left, uv normal pioneer at right
+    show sl normal pioneer at left
+    show uv pioneer_normal at center
+    show un smile pioneer at right
+    
     sl "Это потому что тут влажность большая. Комары, кстати, не самые страшные. Вот какие-нибудь слепни - это действительно кошмар."
     show us dontlike swim at cleft
     us "Давайте сменим тему. Мы всё таки едим."
@@ -4006,28 +4058,37 @@ label after_sit_choice:
 
     show us grin swim at cleft
     us "Давайте о мальчиках поговорим."
-    show sl surprise pioneer at left, uv surprise pioneer at right
+    show sl surprise pioneer at left
+    show uv surprise pioneer at center
+    show un shy pioneer at right
+    
     sl "А тебе не рано?"
     show us smile swim at cleft
     us "Кто из вас уже целовался с парнем?"
     gg "Я - ни разу! И не собираюсь."
     show us laugh swim at cleft
+
     us "Ты-то - понятно! А что насчёт остальных?"
-    show sl shy pioneer at left, un shy pioneer at center
+    show sl shy pioneer at left
+    show un shy pioneer at right
+    show uv pioneer_laugh at center
+    
     uv "Я - ни разу. И не собираюсь."
     th "\"Сестричка\" точь-в-точь повторила мои слова. Явно специально."
     "Я подыграл и мы стукнулись кулачками."
     th "Новый девиз семьи Мухиных: \"Слабоумие и целибат\"."
-    show sl shy pioneer at left
+    show sl smile2 pioneer at left
     sl "Я - два раза."
     show us laugh swim at cleft
     us "Всего два раза? Я уже восемь раз."
     th "Сразу вспомнился анекдот: \"Нашла, чем гордиться. Грудь бы сначала отрастила\""
-    show us smile swim at cleft, sl surprise pioneer at left
+    show us smile swim at cleft
+    show sl surprise pioneer at left
     us "С братом два раза. С соседом Колькой - три раза. С Павликом, это наш, староста - один раз. И прошлым летом два раза. Один раз с сыном маминой подруги Мишей. И один раз… с ещё одним мальчиком. Но я имя забыла."
     th "А вот мальчик, наверное, не забыл."
     th "И до сих пор пишет её имя и рисует сердечки в своём блокнотике."
-    show un surprise pioneer at center, sl smile pioneer at left
+    show un surprise pioneer at right
+    show sl smile pioneer at left
     un "Вот это да!"
     sl "Ты что, считала поцелуи в щёчку?"
     show us normal swim at cleft
@@ -4039,8 +4100,9 @@ label after_sit_choice:
     th "Ну тут тоже есть варианты."
     show us normal swim at cleft
     us "А-а-а-а… Тогда, ни разу."
+    show un shy pioneer at right
     un "И я ни разу."
-    show sl shy pioneer at left
+    show sl smile pioneer at left
     sl "Оказывается я тут самая \"распутная\"."
     th "Хорошо что я успел соскочить с этой темы. А то пришлось бы и мне назвать свою позорную цифру."
     th "Поэтому я помалкивал."
@@ -4053,7 +4115,7 @@ label after_sit_choice:
     us "Новая тема. Кто из вас уже пробовал вино?"
     show us angry swim at cleft
     us "И не вздумайте ляпнуть, что мне ещё рано."
-    show un shy pioneer at center
+    show un smile2 pioneer at right
     un "Я пила шампанское на Новый Год. Это считается?"
     show us normal swim at cleft
     us "Думаю, да. Шампанское - это считай то же вино, просто с газиками."
@@ -4061,7 +4123,7 @@ label after_sit_choice:
     th "Но что-то меня остановило."
     sl "А я пробовала домашнее вино из слив. Но мне не понравилось. А ты, Максим?"
     gg "Домашнее тоже пробовал, и мне тоже не понравилось."
-    show uv grin pioneer at right
+    show uv pioneer_laugh at center
     uv "Ага. Максик только магазинное уважает."
     show sl serious pioneer at left
     sl "И часто он его \"уважает\"?"
@@ -4071,7 +4133,10 @@ label after_sit_choice:
     show us laugh swim at cleft
     us "А я тоже пила вино!"
     gg "Надо полагать, тоже восемь раз?"
-    show sl laugh pioneer at left, un laugh pioneer at center, uv laugh pioneer at right, us angry swim at cleft
+    show sl laugh pioneer at left
+    show un laugh pioneer at right
+    show uv pioneer_laugh pioneer at center
+    show us angry swim at cleft
     uv "Чё вы ржёте? Я, на самом деле, пробовала вино. Ребята во дворе угостили."
     sl "Понравилось?"
     show us smile swim at cleft
@@ -4079,20 +4144,17 @@ label after_sit_choice:
     "Все замолчали."
 
     play music "sound/music/reminiscences.ogg" fadeout 1 fadein 1
-    "Темы для беседы закончились."
-    "Оно и понятно: всё важное уже обсудили. Поцелуйчики, вино и музыку."
-    "Так сказать: секс, драгс, рок-н-ролл."
-    "В лайтовой версии."
-label start:
-
-    scene bg int_dining_hall_day with dissolve
+    th "Темы для беседы закончились."
+    th "Оно и понятно: всё важное уже обсудили. Поцелуйчики, вино и музыку."
+    th "Так сказать: секс, драгс, рок-н-ролл."
+    th "В лайтовой версии."
 
     "Я немного погрыз свой хлеб, но аппетита не было. Так что отдал его Ульянке."
 
-    show us normal pioneer at center
+    show us normal pioneer at cleft
     us "Надо в следующий раз взять сосисок."
 
-    show sl sad pioneer at right
+    show sl sad pioneer at left
     sl "Я и в этот раз пыталась. Но в столовой сказали, что у них запасов мало. Мол, когда новый подвоз будет - тогда смогут лишнее отдать."
 
     us "Небось, которые уже испортились."
@@ -4101,20 +4163,20 @@ label start:
     us "А мы что? Не \"все\"?"
     sl "Так нас тоже кормят. В отведённое время положенными порциями. Или тебе хочется особого отношения? И эксклюзивного питания."
 
-    show us grin pioneer at center
+    show us grin pioneer at cleft
     us "Конечно! Я же особенная!"
     th "Знала бы она, что в 21-ом веке \"особенными\" стало принято называть всяких умственно отсталых."
 
-    show sl smile pioneer at right
+    show sl smile pioneer at left
     sl "Ладно, особенная ты наша. Если на ужин будут сосиски, то я с тобой поделюсь одной."
 
-    show us dontlike pioneer at center
+    show us dontlike pioneer at cleft
     us "Всего одной?"
 
-    show un smile pioneer at left
+    show un smile pioneer at right
     un "И я одной."
 
-    show uv smile pioneer at farleft
+    show uv pioneer_smile pioneer at center
     uv "И я. И Максик."
 
     th "О! Снова всё за меня решили."
@@ -4125,7 +4187,7 @@ label start:
     sl "Пора."
     uv "Как обратно поплывём?"
 
-    show sl surprise pioneer at right
+    show sl surprise pioneer at left
     sl "В смысле? Так же, как и сюда: на лодке."
     uv "Это понятно. А в какой последовательности? И в какой комбинации?"
     sl "В такой же."
@@ -4136,7 +4198,7 @@ label start:
 
     uv "Но мне очень срочно надо в лагерь. Можно мы с Леной первыми поплывём?"
 
-    show sl laugh pioneer at right
+    show sl laugh pioneer at left
     sl "Ну раз срочно… тогда ладно. Максим, ты уж постарайся."
     "Она положила руку мне на плечо."
 
@@ -4145,7 +4207,7 @@ label start:
 
     scene bg ext_boathouse_day with dissolve
     show un normal pioneer at left
-    show uv normal pioneer at right
+    show uv pioneer_normal at right
     "Тем не менее, я действительно старался."
     "Особенно на первых порах. Когда Славя смотрела на нас с берега."
     "Почему-то хотелось произвести впечатление на эту девушку."
@@ -4191,7 +4253,7 @@ label start:
     show sl normal pioneer at right
     sl "Всё равно не надо. Слово \"болтушка\" - некоторые могут воспринять, как негативное."
 
-    show us think pioneer at center
+    show us surp2 pioneer at center
     us "Хм-м-м… А если \"болтунья\"?"
 
     show sl laugh pioneer at right
@@ -4210,7 +4272,7 @@ label start:
     sl "Ты уж прости, что мы тут про твою сестру такие вещи говорим."
     gg "Ничего страшного. Она бы тоже не обиделась."
 
-    show us surprise pioneer at center
+    show us surp3 pioneer at center
     us "Правда?"
     gg "Ага. И даже включилась бы в игру. И накидала вам побольше вариантов: болталка, болталесса, болтанелла…"
 
@@ -4287,6 +4349,8 @@ label start:
 
     scene bg ext_boathouse_day with dissolve
     show us normal pioneer at center
+    show sl smile2 pioneer at right
+
     us "Я первая!"
     sl "Вечно тебе раньше всех надо быть."
 
@@ -4366,7 +4430,7 @@ label start:
     play music music_list["i_want_to_play"] fadein 3
     hide sl with dissolve
 
-    show uv normal pioneer at left
+    show uv pioneer_normal at left
     show us normal pioneer at right
     uv "Наконец-то и ты. Почему так долго?"
     gg "По-моему, как раз вовремя. И еда ещё горячая, и очередь рассосалась."
@@ -4384,73 +4448,93 @@ label start:
     show us fear pioneer at right
     us "А что я? Я ничего... просто пошутила."
 
-    show uv angry pioneer at left
+    show uv pioneer_sur at left
+    show us smile pioneer at right
+
     uv "Эм-м-м...{w} А почему ты зовёшь гостей, не спросив у меня разрешения."
     gg "Так ты же сама позвала Лену!"
     uv "Одну!{w} Позвать одного человека в гости - это нормально. Устроить вечеринку, не спросив разрешения - это другое."
     gg "И начиная с какого количества гостей начинается вечеринка?"
 
-    show us think pioneer at right
+    show us pioneer laugh2 at right
+    show uv pioneer_normal at left
+
     uv "Э-Э-Э...{w} ну когда гостей больше, чем хозяев."
     th "Прикольно. Получается я постоянно устраивал у себя вечеринки, когда друзья приходили в контр страйк поиграться."
     th "Экий я тусовщик."
 
     gg "Так что? Всё отменяем?"
+    show us pioneer normal at right
     us "Ну уж нет! Я уже настроилась."
     th "Ага. И что-то мне подсказывает, что это её первая вечеринка. Будет обидно, если она закончится, так и не начавшись."
 
+    show uv pioneer_smile at left
     uv "Согласна с Улькой. Ты же ещё скажешь, что это всё вредная сестра отменила. {w} Знаю я тебя.{w} Вечно меня оклеветать норовишь."
     th "Какой я негодяй!"
     th "Даже не подумал о чувствах сестрички, когда говорил правду. Причём гипотетически."
 
-    show us surprise pioneer at right
+    show us surp3 pioneer at right
     us "Улькой?"
 
     show us angry pioneer at right
     us "Я - Ульяна! Говорила же уже!"
     uv "Вот я - Юля. А сокращённое - Юлька."
     th "Да уж.... сократила так, что длиннее получилось."
-    th "С тем же успехом, я могу \"Максима\" сократить до \"Максимки\"."
+    th "С тем же успехом, я могу \"Максима\" сократить до \"Максимочки\"."
 
     us "Нет. Я - Ульяна, и всё. Моё имя не сокращается."
     uv "А как тебя мама ласково называла?"
 
     show us smile pioneer at right
+    
     us "Ульяночка."
     uv "Так может будешь \"Яночкой\""
     us "Не-е-е... {w} \"Яночка\" - это \"Яна\". Назвать меня \"Яночкой\" - это всё равно что назвать Максимку... \"Симкой\"."
     th "Ну хоть не Ноликом."
 
+    show uv pioneer_laugh at left
     uv "Ха! Ему такое точно не понравится.{w} Макси любит только грубое Макс. Или хотя бы \"Муха\". А вот моё любимое \"Макси\" - уже на грани фола."
+    show us laugh2 pioneer at right
     us "Я бы за \"муху\" поколотила. Не люблю насекомых.{w} Если уж с кем из летающих сравнивать, то с птицами. Они хотя бы красивые."
     gg "Ульян, так ведь кроме насекомых и птиц - никто больше не летает."
+    show us smile pioneer at right
+    
     us "Как так, никто? А как же летучие мышки?"
     gg "Точно. Я про них забыл."
     us "Ещё птеродактили. Правда они уже вымерли. {w} Белки-летяги ещё."
     th "И, в принципе, любое животное, если его посадить в самолёт. Ну кроме тех, которые в самолёт не влезут. Киты какие-нибудь…"
     th "Рождённый плавать - летать не может, ага."
 
-    show uv rage pioneer at left
+    show uv pioneer_sad at left
     uv "МАКСИМ!!!"
     th "От моих зоологических философствований меня отвлёк голос Юли."
     gg "А?"
+    show uv pioneer_smile at left
     uv "Опять в облаках витаешь?"
     gg "Вроде того."
     th "Вместе с китами и птеродактилями."
     uv "Так спустись с небес на землю и поухаживай за дамами."
     gg "А точнее."
     uv "Принеси нам по ещё одной порции чая с булочками."
+    show us grin pioneer at right
     gg "Мы же вроде на тусовку собирались."
     us "Всё равно косатая ещё по своим важным делам ходить будет."
     uv "Кстати, а почему \"косатая\"?"
     us "Ну...{w} я так Славку называю. Отрастила свои косы и ходит хвастается."
 
+    hide us
+    hide uv
+
     "Я сходил за снедью, а девочки всё это время трепались о всякой ерунде. Прыгая с тему на тему."
     "Где-то между правильным рецептом похлёбки и летними шляпками, я начал зевать."
+    show uv pioneer_smile at left
+    show us grin pioneer at right
+
     th "Не демонстративно, но Юля всё равно заметила."
     th "И сделала выводы."
-
+    show uv pioneer_laugh at left
     uv "Думаю, пора идти. Пока Макси не заснул."
+    show us laugh pioneer at right
     us "Сразу видно, привык в девять ложиться. Как маленький."
     uv "Он и на вечеринках всегда первым отрубается."
     th "Вот пожалуйста!"
@@ -4460,30 +4544,35 @@ label start:
 
     play music music_list["two_glasses_of_melancholy"] fadein 3
 
-    scene bg ext_dining_hall_away_night with dissolve
-    scene bg ext_square_night with dissolve
-    scene bg ext_house_of_mt_night with dissolve
-
+    scene bg ext_dining_hall_away_sunset with dissolve
+    $ renpy.pause(1)
+    scene bg ext_square_sunset with dissolve
+    $ renpy.pause(1)
+    scene ext_house_of_ggs_sunset with dissolve
     show sl smile pioneer at center
+    show uv pioneer_smile at left
+    show us normal pioneer at right
+    
     sl "Наконец-то и вы. Я уже думала за вами идти."
     us "Ты одна? А где Лена?"
     sl "Она так много зевала, что я её спать отправила."
 
-    show uv grin pioneer at left
+    show uv pioneer_laugh at left
     uv "Хех... это у вас семейное."
     sl "Что?"
 
-    show uv shy pioneer at left
+    show uv pioneer_sad at left
     uv "Я говорю, что как у нас. Мы с Макси тоже как поедим, так сразу зеваем. Так что не обращайте внимания."
     th "Кошко-девочка состроила до того невинную мордашку, что Славя и Ульянкой повелись."
     th "В ответ на мой хмурый взгляд Юля лишь пожала плечами."
     th "Мол, ничего особенного. Подумаешь, проговорилась."
     th "Я почему-то уверен, что меня за подобный косяк \"сестричка\" ругала бы минимум полчаса."
 
-    scene bg int_house_of_mt_night with dissolve
+    scene int_extra_house_nigght with dissolve
+    
     show sl normal pioneer at right
     show us normal pioneer at center
-    show uv normal pioneer at left
+    show uv pioneer_normal at left
 
     us "Ну что?{w} Чем займёмся?{w} Может, в картишки?"
 
@@ -4519,7 +4608,7 @@ label start:
     show us laugh pioneer at center
     us "Можно? Правда?"
 
-    show uv smile pioneer at left
+    show uv pioneer_smile pioneer at left
     uv "Конечно! Мне не жалко. Девушки у него нет."
     th "Хвостатая беззастенчиво и мимолетом выдала мой \"некрутой\" статус."
     th "Но, что странно, присутствующих сей факт не развеселил, как я всегда боялся."
@@ -4536,7 +4625,7 @@ label start:
     us "Готов?"
     gg "К чему?"
     "Вместо ответа девочка встала на цыпочки и чмокнула меня в щёчку."
-
+    show us grin close at center with vpunch
     show us laugh pioneer at center
     show sl laugh pioneer at right
     us "Ну вот."
@@ -4551,19 +4640,21 @@ label start:
     th "Это лет в 14 ещё есть шанс невинную найти. И то - надо постараться."
     th "Приятель рассказывал, что он свою первую любовь \"отлюбил\" в актовом зале. Она в седьмом классе тогда училась, он - на год старше. Так даже она уже не девочкой была."
 
-    us "Чем ещё можно заняться?{w} Давайте, кто дольше на голове простоит."
+    us "Чем ещё можно заняться?"
+    show us grin pioneer far
+    us "Давайте, кто дольше на голове простоит."
 
     show us normal pioneer at center with vpunch
     "Спрайт Ульянки переворачивается"
     uv "И что получит победитель?"
     gg "Кровоизлияние в мозг."
 
-    show uv smile pioneer at left
+    show uv pioneer_laugh at left
     show sl laugh pioneer at right
     sl "Слышала, Ульяна? Это небезопасно."
 
-    show us normal pioneer at center with vpunch
-    "Спрайт Ульянки в нормальном положении"
+    show us grin pioneer far at gradual_flip
+    show us grin pioneer
     us "Вы просто испугались, что я победю."
 
     show sl smile pioneer at right
@@ -4580,13 +4671,13 @@ label start:
     sl "И что совсем никаких идей кем стать в будущем?"
     gg "Вроде того. {w} Выбираю между промышленным альпинизмом и капитаном дальнего плаванья."
 
-    show uv laugh pioneer at left
+    show uv pioneer_laugh pioneer at left
     uv "Жаль только что Макси боится высоты и открытого моря."
 
     show sl surprise pioneer at right
     sl "Правда?"
 
-    show uv smile pioneer at left
+    show uv pioneer_smile pioneer at left
     uv "Нет, конечно. Мы просто шутим. {w} Максим у нас будет крутым строителем."
     th "Строителем, конечно. Но почему \"крутым\"?"
     th "Что \"крутого во внутренней отделке\"? Про штукатуров не снимают боевиков."
@@ -4654,7 +4745,7 @@ label start:
 
     gg "Правда или действие."
 
-    show uv smile pioneer at left
+    show uv pioneer_smile pioneer at left
     show sl surprise pioneer at right
     show us surprise pioneer at center
 
@@ -4670,7 +4761,7 @@ label start:
     gg "Надо посовещаться."
 
     show sl normal pioneer at close_right
-    show uv normal pioneer at close_left
+    show uv pioneer_normal at close_left
     show us normal pioneer at far_right
     gg "Есть идеи?"
     uv "Отправь её пробежать вокруг дома три раза"
@@ -4772,7 +4863,7 @@ label start:
     gg "Так пойдёмте внутрь. Сама допрыгает."
 
     scene bg int_house_of_mt_night with dissolve
-    show uv normal pioneer at left
+    show uv pioneer_normal at left
     show sl normal pioneer at right
     show us normal pioneer at center
 
@@ -4783,7 +4874,7 @@ label start:
     show sl shy pioneer at right
     sl "Ой! {w} Точно. Правда или действие?"
 
-    show uv laugh pioneer at left
+    show uv pioneer_laugh pioneer at left
     uv "Ну теперь-то действие…"
     show uv grin pioneer at left
     uv "Ладно, пойду бегать. {w} Но только при одном условии."
@@ -4865,7 +4956,7 @@ label start:
             play music "<silence 1.0>"
             show sl shy pioneer at right
             show us laugh pioneer at center
-            show uv laugh pioneer at left
+            show uv pioneer_laugh pioneer at left
             uv "Вот уж не подумала бы!"
             show us surprise pioneer at center
             us "Ты думала, что он меня выберет?"
@@ -4885,7 +4976,7 @@ label start:
             us "Это не важно…{w} Главное, что ты выбрал не меня. И я знаю, почему. Всё дело в сиськах."
             show sl smile pioneer at right
             sl "Ульянка! Как тебе не стыдно?"
-            show uv smile pioneer at left
+            show uv pioneer_smile pioneer at left
             uv "Они ещё вырастут. И потом, я же говорила, что Максик у нас обычно чуть пониже смотрит."
             us "Ну задница у неё тоже больше"
             show sl angry pioneer at right
@@ -4899,7 +4990,7 @@ label start:
             sl "Ульян, хватит…"
             us "А что я? Максик тоже так думает."
             gg "Я же вслух не говорю."
-            show uv laugh pioneer at left
+            show uv pioneer_laugh pioneer at left
             show sl shy pioneer at right
             show us laugh pioneer at center
             us "Вот и проговорился."
@@ -4921,7 +5012,7 @@ label start:
             show us kiss at center with vpunch
             play music "<silence 1.0>"
             show us smile pioneer at center
-            show uv laugh pioneer at left
+            show uv pioneer_laugh pioneer at left
             show sl surprise pioneer at right
             uv "Вот уж не подумала бы!"
             show us surprise pioneer at center
@@ -4946,7 +5037,7 @@ label start:
             us "Ну-у-с… {w} чья теперь очередь? Может снова я? Раз уж я победила…"
             gg "Ульян, это не та игра в которую можно победить."
             us "Я не про игру, а про наш маленький конкурс красоты."
-            show uv laugh pioneer at left
+            show uv pioneer_laugh pioneer at left
             uv "Маловато у нас жюри для такого мероприятия."
             gg "Да и раундов было мало. Нужен ещё спортивный конкурс, конкурс талантов, конкурс бикини…"
             show sl surprise pioneer at right
@@ -4954,7 +5045,7 @@ label start:
             uv "Это конкурс где девушки позируют в нижнем белье."
             show sl shy pioneer at right
             sl "Я в курсе. Просто это как-то…"
-            show uv laugh pioneer at left
+            show uv pioneer_laugh pioneer at left
             uv "Неприлично?{w} Не обращай внимание. Макси просто пошутил."
             gg "Да-да. {w}Я просто пошутил."
             show us grin pioneer at center
@@ -4968,12 +5059,12 @@ label start:
             "Девушки переглянулись."
             uv "На счёт три."
             sl "Раз… два… три…"
-            show uv laugh pioneer panties at left
+            show uv pioneer_laugh pioneer panties at left
             show sl shy pioneer panties at right
             show us surprise pioneer at center
             gg "Вау!"
             us "Ничего себе!"
-            show uv laugh pioneer panties at left
+            show uv pioneer_laugh pioneer panties at left
             show sl laugh pioneer panties at right
             uv "Ну что? Кто победил."
             gg "Вы обе победили."
@@ -5010,7 +5101,7 @@ label start:
         "Поцеловать Юлю":
             $ uv_points += 1
             $ depression += 1
-            show uv normal pioneer at close_left
+            show uv pioneer_normal at close_left
             "Чмок!"
             show uv kiss at center with vpunch
             play music "<silence 1.0>"
@@ -5070,7 +5161,7 @@ label start:
     uv "Что?"
     gg "Ну…{w} Мы же больше не увидимся, так? Получается, что наше общение не имеет смысла."
 
-    show uv smile pioneer at center
+    show uv pioneer_smile pioneer at center
     uv "Какой смысл тебе нужен? Разве смысл общения не в самом общении?"
     gg "Возможно. Но…{w} я не знаю, как это объяснить. Знание о том, что мы никогда больше не увидимся - всё меняет. Абсолютно всё."
     uv "Макси, ты когда-нибудь путешествовал на попутках?"
@@ -5078,7 +5169,7 @@ label start:
     uv "А знаешь, в чём фишка таких путешествий?"
     gg "В том, что так дешевле?"
 
-    show uv normal pioneer at center
+    show uv pioneer_normal at center
     uv "Отчасти.{w} Но ещё в том, что ты общаешься с живым человеком, которого больше никогда не увидишь.{w} Конечно, с одной стороны это минус. Но с другой стороны, снимает границы, которые тебя бы останавливали.{w} Это называется эффект попутчика."
     gg "Понятно. У меня появилась возможность излить душу. А я вместо этого играл в поцелуйчики."
     uv "Тут ты сам виноват."
@@ -5098,7 +5189,7 @@ label start:
     uv "Про это мне тоже нельзя говорить."
     gg "А про что можно?"
 
-    show uv smile pioneer at center
+    show uv pioneer_smile pioneer at center
     uv "Могу только сказать, что мне понравилось путешествовать с тобой. Ты - хороший."
     gg "Получается, что…"
 
