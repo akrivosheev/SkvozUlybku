@@ -179,6 +179,11 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( "mods/SkvozUlybku/image/sprite/uv/last_uv_sad.png", im.matrix.tint(0.63, 0.78, 0.82) ),
     True, "mods/SkvozUlybku/image/sprite/uv/last_uv_sad.png" )
 
+    image uv pioneer_sleep = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( "mods/SkvozUlybku/image/sprite/uv/last_uv_sleep2.png", im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( "mods/SkvozUlybku/image/sprite/uv/last_uv_sleep2.png", im.matrix.tint(0.63, 0.78, 0.82) ),
+    True, "mods/SkvozUlybku/image/sprite/uv/last_uv_sleep2.png" )
+
     image uv pioneer_smile = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( "mods/SkvozUlybku/image/sprite/uv/last_uv_smile.png", im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( "mods/SkvozUlybku/image/sprite/uv/last_uv_smile.png", im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -380,7 +385,7 @@ init:
     image zh sur_close = "/mods/SkvozUlybku/image/sprite/zh/zh_sur_close.png"
 
     image zh modern_normal = "/mods/SkvozUlybku/image/sprite/zh/zh_modern_normal.png"
-    image zh modern_sur = "/mods/SkvozUlybku/image/sprite/zh/zh_modern_sur.png"
+    image zh modern_sur = "/mods/SkvozUlybku/image/sprite/zh/zh_modern_sur3.png"
     image zh modern_angry = "/mods/SkvozUlybku/image/sprite/zh/zh_modern_angry.png"
 
     #ВИОЛА
@@ -594,6 +599,8 @@ init:
     image cg sla_end = "/mods/SkvozUlybku/cg/konc_sla.jpg"
     #CG  ПЛОХАЯ КОНЦОВКА
     image cg bad_end = "/mods/SkvozUlybku/cg/bad_end.jpg"
+    #CG  КОНЦОВКА ЖЕНИ
+    image cg jen_end = "/mods/SkvozUlybku/cg/mz_final.jpg"
 
     #ПОЛЯНКА
     image bg ext_clearing_day = "/mods/SkvozUlybku/bg/lager/polianka.jpg"
