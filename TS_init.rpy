@@ -63,27 +63,19 @@ init:
     #БГ С ФОНОМ НАРИСОВАННОЙ УЛИЦЫ ДНЁМ
     image walk2_day = "/mods/SkvozUlybku/bg/prolog/IMG_0121_day.jpg"
     #МАЧОЧЕЛ
-    image macho = "/mods/SkvozUlybku/image/sprite/walk/IMG_0124.jpg"
+    image macho = "/mods/SkvozUlybku/image/sprite/walk/IMG_0124.png"
     #ТЯНКАА
-    image tyan = "/mods/SkvozUlybku/image/sprite/walk/tyan.jpg"
+    image tyan = "/mods/SkvozUlybku/image/sprite/walk/tyan.png"
     #СИНЯК
     image sinyak = "/mods/SkvozUlybku/image/sprite/walk/gopnik_norm.png"
     image sinyak_angry = "/mods/SkvozUlybku/image/sprite/walk/gopnik_angry.png"
     image sinyak_smile = "/mods/SkvozUlybku/image/sprite/walk/gopnik_smile.png"
     image sinyak_scare = "/mods/SkvozUlybku/image/sprite/walk/gopnik_scare.png"
 
-    #БУЕРАК ПАРОДИЯ 
-    $ doomer1 = "/mods/SkvozUlybku/sound/music/prologsong1.mp3"
-    #БУЕРАК НАСТОЯЩИЙ
-    $ doomer2 = "/mods/SkvozUlybku/sound/music/buerak.mp3"
-    #СУЗУМЕ
-    $ suzume = "/mods/SkvozUlybku/sound/music/Katashi_-_suzume_78420725.mp3"
     #АЙ ОФ Э ТАЙГЕР
     $ kachok_m = "/mods/SkvozUlybku/sound/music/Kachok.mp3"
     #РИНГТОН ЛЕНЫ
     $ phone_lena = "/mods/SkvozUlybku/sound/sfx/phone_lena.mp3"
-    #AllesClub-GnossienneNo1.mp3
-    $ GnossienneNo1 = "mods/SkvozUlybku/sound/music/AllesClub-GnossienneNo1.mp3"
     #Caravan_Palace
     $ Caravan_Palace = "mods/SkvozUlybku/sound/music/Caravan_Palace.mp3"
     #Frantic_Aerobics
@@ -588,6 +580,7 @@ init:
     image cg tanec_miku = "/mods/SkvozUlybku/cg/max_miku_dance.jpg"
     image cg tanec_slavya = "/mods/SkvozUlybku/cg/max_slavya_dance.jpg"
     image cg tanec_ulyana = "/mods/SkvozUlybku/cg/max_ulyana_dance.jpg"
+    image cg tanec_lena = "/mods/SkvozUlybku/cg/max_lena_dance.jpg"
 
     #CG КОНЦОВКА ЮЛИ
     image cg uv_end = "/mods/SkvozUlybku/cg/uv_end.jpg"
@@ -651,9 +644,13 @@ init:
     transform macho_vniz:
         anchor (1, 1)
         pos(0.6, 0.35)
-    
+        zoom 0.4
+    transform tyan_vniz:
+        anchor (1, 1)
+        pos(0.35, 0.45)
+        zoom 0.3
     transform creditz:
         yalign 1.5
         linear 15.0 yalign -1.5
 
-    $ TS_credits = "Над модом работали:\n\n\n\nАвтор идеи: Alex Kriver.\n\nСценаристы — Alex Kriver, Maria\n\nПрограммисты — Iven TV,  Alex Kriver, Jácek \n\nРедактор — Iven TV\n\nХудожники - Ostap Ostap \n\nФотошоп - Iven TV\n\nБета-тестеры — Alex Kriver, Iven TV и Jácek \n\nОсобые благодарности:\n\nOstap Ostap, команде iichan eroge team\n\n\n\nХудожественные материалы взяты с мода:\n\n7 Дней Лета\n\n\n\nВсем пива!"
+    $ TS_credits = "Над модом работали:\n\n\n\nАвтор идеи: Alex Kriver.\n\nСценаристы — Alex Kriver, Maria\n\nПрограммисты — Iven TV,  Alex Kriver, Jácek \n\nРедактор — Iven TV\n\nХудожники - Ostap Ostap \n\nФотошоп - Iven TV\n\nБета-тестеры — Alex Kriver, Iven TV и Jácek \n\nОсобые благодарности:\n\nOstap Ostap, команде iichan eroge team и Пэму Серпунову (за создание обложки)\n\n\n\nХудожественные материалы взяты с мода:\n\n7 Дней Лета\n\n\n\nВсем пива!"

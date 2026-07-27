@@ -2482,11 +2482,13 @@ label TS_day3_after_go_to:
     show un shy dress close with dspr
     un "Заранее прости, если ошибусь или наступлю тебе на ногу."
     gg "Заранее прощаю."
+    scene cg tanec_lena with dissolve
     "Я целомудренно взял маму за руки и мы стали двигаться."
     "Не знаю как ей, а мне было чертовски неловко."
     "Даже больше, чем от танцулек с Виолой."
     th "Танцевать с кем возраста своей матери - это фигня. Попробуйте проделать это напрямую со своей матерью. Точнее её молодой версией."
     th "Что, на самом деле, ещё хуже."
+    scene ext_square_dance with dissolve
     show un smile dress close with dspr
     un "А у тебя хорошо получается."
     show un scared dress close with dspr
