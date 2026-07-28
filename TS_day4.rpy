@@ -1143,8 +1143,6 @@ label TS_day4_lager_morning:
     # show us shy pioneer with dissolve
     us "Тут."
     gg "О-о-о! Какая картина.."
-    "Девочка сидела на дереве. Точнее висела."
-    "Если совсем точно, то была зафиксирована между раздвоенным стволом дерева."
     th "Сразу вспоминается один анекдот про лосиху…"
     us "Не хочешь мне помочь?"
     gg "Хочешь повыше залезть?"
@@ -1154,20 +1152,19 @@ label TS_day4_lager_morning:
     "Неудивительно."
     "Платье задралось, и теперь прохожие могли полюбоваться её бело-голубыми трусиками."
     "Я попробовал потянуть девочку за руку."
-    scene ext_houses_day with dissolve
-    show us shy pioneer with dspr
     us "Ай-яй! Больно! Не так… Давай лучше сзади."
     "Я попробовал провернуть тот же трюк используя её ноги."
     us "Ай! Так тоже больно."
     gg "Что ж ты хочешь?"
-    show us shy2 pioneer with dspr
     us "Не знаю. Попробуй за бёдра."
     gg "Это - то же самое."
     us "Не говоря уж о том, что тогда неловко будет мне."
     gg "Лучше попробую так…"
     "Подойдя поближе, я упёрся ногой в дальний ствол и потянул на себя ближний."
-    gg "Давай, малая. Сейчас!"
-    "Ульянка запыхтела, закрятела и всё так вырвалась из захвата."
+    gg "Давай, малая. Попробуем вместе!"
+    call ts_day4_tree_minigame
+    pause(1)
+    scene ext_houses_day with dissolve
     show us grin pioneer2 with dspr
     us "У-у-ух… Ну и дела."
     gg "Ульян… рубашка."
@@ -3545,7 +3542,9 @@ label TS_day4_lager_morning:
             # 1. ВЕТКА: ПОГОВОРИТЬ (РАЦИОНАЛЬНЫЙ ПУТЬ -> КОНЦОВКА С ОКСАНОЙ)
             # ==============================================
             label ts_slavya_talk_rational:
-                stop music 
+                stop music
+                scene cg sl_sleep with dissolve
+                pause(2.0)
                 scene int_tent_night with dissolve
                 show sl sleep with dspr
                 "Не знаю, сколько я так бы сидел. Но Славя открыла глаза раньше, чем я на что-то решился."
@@ -4400,6 +4399,8 @@ label TS_day4_lager_morning:
             # ==============================================
             label ts_slavya_kiss_romantic:
                 stop music
+                scene cg sl_sleep with dissolve
+                pause(2.0)
                 scene int_tent_night with dissolve
                 show sl sleep with dspr
                 "Я наклонился и поцеловал девушку."

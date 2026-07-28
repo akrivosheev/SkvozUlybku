@@ -574,7 +574,9 @@ init:
     image int_warehouse =  "/mods/SkvozUlybku/bg/lager/int_warehouse_day_7dl.jpg"
     image razdel = "/mods/SkvozUlybku/bg/lager/razdel.jpg"
     #CG УЛЬЯНКА ЗАСТРЯЛА
-    image cg zastral = "/mods/SkvozUlybku/cg/zastral.jpg"
+    image cg zastral = "/mods/SkvozUlybku/cg/zastral.png"
+    #CG СЛАВЯ СПИТ
+    image cg sl_sleep = "/mods/SkvozUlybku/cg/Sl_sleep.jpg"
 
     image cg tanec_viola = "/mods/SkvozUlybku/cg/max_viola_dance.jpg"
     image cg tanec_miku = "/mods/SkvozUlybku/cg/max_miku_dance.jpg"
