@@ -8,7 +8,7 @@ default tree_game_display_frame = 1
 
 init python:
 
-    TREE_GAME_TOTAL_FRAMES = 53
+    TREE_GAME_TOTAL_FRAMES = 60
     TREE_GAME_WIN_FRAME = 26
     TREE_GAME_PERIOD = 1.4
     TREE_GAME_MIN_ZONE = 0.09
@@ -83,11 +83,10 @@ init python:
         renpy.show("tree_game_finale_bg", what=Solid("#000000"), zorder=9)
 
         for i in range(store.tree_game_progress, TREE_GAME_TOTAL_FRAMES + 1):
-            renpy.show("tree_game_finale_frame", what=Transform(tree_game_frame_path(i), zoom=1.8), zorder=10)
+            renpy.show("tree_game_finale_frame", what=Transform(tree_game_frame_path(i), zoom=1.8, xalign=0.5, yalign=0.4), zorder=10)
             renpy.pause(TREE_GAME_FINALE_FRAME_TIME, hard=True)
 
         renpy.hide("tree_game_finale_frame")
-        renpy.hide("tree_game_finale_bg")
 
 transform tree_game_scale:
     zoom 1.8
@@ -102,19 +101,24 @@ screen tree_escape_game():
 
     add tree_game_frame_path() at tree_game_scale xalign 0.5 yalign 0.4
 
-    text "Нажимай, только когда бегунок движется вперёд и находится в подсвеченной зоне!" xalign 0.5 ypos 860 size 34 color "#ffffff"
-
     fixed:
         xalign 0.5
-        ypos 920
+        ypos 820
         xsize 900
-        ysize 46
+        ysize 146
 
-        add Solid("#00000080") xysize (900, 46)
+        add Solid("#00000080") xysize (900, 146)
 
-        add Solid("#e0ff0090") xpos int(900 * tree_game_zone[0]) xsize int(900 * (tree_game_zone[1] - tree_game_zone[0])) ysize 46
+        text "Нажимай, только когда бегунок движется вперёд и находится в подсвеченной зоне!" xalign 0.5 ypos 20 size 34 color "#ffffff"
 
-        add Solid("#ff2222") xpos int(900 * tree_game_crawler_frac) xsize 14 ysize 46
+        fixed:
+            ypos 100
+            xsize 900
+            ysize 46
+
+            add Solid("#e0ff0090") xpos int(900 * tree_game_zone[0]) xsize int(900 * (tree_game_zone[1] - tree_game_zone[0])) ysize 46
+
+            add Solid("#ff2222") xpos int(900 * tree_game_crawler_frac) xsize 14 ysize 46
 
     key "K_SPACE" action Function(tree_game_on_click)
 
