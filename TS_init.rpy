@@ -267,11 +267,21 @@ init:
     image uv cat_sad = "/mods/SkvozUlybku/image/sprite/uv/cat_uv_sad.png"
     image uv cat_smile = "/mods/SkvozUlybku/image/sprite/uv/cat_uv_smile.png"
     image uv cat_laugh = "/mods/SkvozUlybku/image/sprite/uv/cat_uv_laugh.png"
-    image uv nake_angry = "/mods/SkvozUlybku/image/sprite/uv/nake_uv_angry.png"
-    image uv nake_angry3 = "/mods/SkvozUlybku/image/sprite/uv/nake_uv_angry3.png"
-    image uv nake_laugh = "/mods/SkvozUlybku/image/sprite/uv/nake_uv_laugh.png"
-    image uv nake_smile = "/mods/SkvozUlybku/image/sprite/uv/nake_uv_smile.png"
-    image uv nake_sur = "/mods/SkvozUlybku/image/sprite/uv/nake_uv_sur.png"
+    image uv nake_angry = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_angry.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_angry.png" )
+    image uv nake_angry3 = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_angry3.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_angry3.png" )
+    image uv nake_laugh = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_laugh.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_laugh.png" )
+    image uv nake_smile = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_smile.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_smile.png" )
+    image uv nake_sur = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_sur.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_sur.png" )
     image uv sport_smile = "/mods/SkvozUlybku/image/sprite/uv/sport_smile.png"
     image uv sport_laugh = "/mods/SkvozUlybku/image/sprite/uv/sport_laugh.png"
     image uv sport_angry = "/mods/SkvozUlybku/image/sprite/uv/sport_angry.png"
@@ -311,10 +321,18 @@ init:
     image sl modern_laugh = "/mods/SkvozUlybku/image/sprite/sl/sl_modern_laugh.png"
     image sl modern_shy = "/mods/SkvozUlybku/image/sprite/sl/sl_modern_shy.png"
     
-    image sl body_shy = "/mods/SkvozUlybku/image/sprite/sl/sl_body_shy.png"
-    image sl body_smile = "/mods/SkvozUlybku/image/sprite/sl/sl_body_smile.png"
-    image sl body_unsmile = "/mods/SkvozUlybku/image/sprite/sl/sl_body_unsmile.png"
-    image sl body_laught = "/mods/SkvozUlybku/image/sprite/sl/sl_body_laught.png"
+    image sl body_shy = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_shy.png", (1125, 1080), [(515, 635)], 190),
+        True, "mods/SkvozUlybku/image/sprite/sl/sl_body_shy.png" )
+    image sl body_smile = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_smile.png", (1125, 1080), [(325, 620), (510, 605)], 190),
+        True, "mods/SkvozUlybku/image/sprite/sl/sl_body_smile.png" )
+    image sl body_unsmile = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_unsmile.png", (1125, 1080), [(325, 620), (510, 605)], 190),
+        True, "mods/SkvozUlybku/image/sprite/sl/sl_body_unsmile.png" )
+    image sl body_laught = ConditionSwitch(
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_laught.png", (1125, 1080), [(515, 635)], 190),
+        True, "mods/SkvozUlybku/image/sprite/sl/sl_body_laught.png" )
 
     #СОКУРСНИК
     image so so_sad = im.FactorScale("/mods/SkvozUlybku/image/sprite/so/so_sad.png", 1.6)
@@ -564,38 +582,38 @@ init:
     image station_rain = "/mods/SkvozUlybku/bg/lager/station_rain.png"
 
     #CG ВОЛЛЕЙБОЛ
-    image cg volleyball = "/mods/SkvozUlybku/cg/volleyball.jpg"
-    image cg volleyball_un = "/mods/SkvozUlybku/cg/volleyball_un.jpg"
+    image cg volleyball = ts_cg('volleyball','jpg')
+    image cg volleyball_un = ts_cg('volleyball_un','jpg')
     #CG ЛЕНОЗАДНИЦА
-    image cg butterfly100 = "/mods/SkvozUlybku/cg/butterfly100.jpg"
+    image cg butterfly100 = ts_cg('butterfly100','jpg')
     #CG СОБИРАЮТ ЦВЕТЫ
-    image cg un_uv_flowers = "/mods/SkvozUlybku/cg/cg un_uv_flowers.jpg"
+    image cg un_uv_flowers = ts_cg('cg un_uv_flowers','jpg')
     image ext_warehouse =  "/mods/SkvozUlybku/bg/lager/ext_warehouse_day_7dl.jpg"
     image int_warehouse =  "/mods/SkvozUlybku/bg/lager/int_warehouse_day_7dl.jpg"
     image razdel = "/mods/SkvozUlybku/bg/lager/razdel.jpg"
     #CG УЛЬЯНКА ЗАСТРЯЛА
-    image cg zastral = "/mods/SkvozUlybku/cg/zastral.png"
+    image cg zastral = ts_cg('zastral','png','zastala')
     #CG СЛАВЯ СПИТ
     image cg sl_sleep = "/mods/SkvozUlybku/cg/Sl_sleep.jpg"
 
-    image cg tanec_viola = "/mods/SkvozUlybku/cg/max_viola_dance.jpg"
-    image cg tanec_miku = "/mods/SkvozUlybku/cg/max_miku_dance.jpg"
-    image cg tanec_slavya = "/mods/SkvozUlybku/cg/max_slavya_dance.jpg"
-    image cg tanec_ulyana = "/mods/SkvozUlybku/cg/max_ulyana_dance.jpg"
-    image cg tanec_lena = "/mods/SkvozUlybku/cg/max_lena_dance.jpg"
+    image cg tanec_viola = ts_cg('max_viola_dance','jpg')
+    image cg tanec_miku = ts_cg('max_miku_dance','jpg')
+    image cg tanec_slavya = ts_cg('max_slavya_dance','jpg')
+    image cg tanec_ulyana = ts_cg('max_ulyana_dance','jpg')
+    image cg tanec_lena = ts_cg('max_lena_dance','jpg')
 
     #CG КОНЦОВКА ЮЛИ
-    image cg uv_end = "/mods/SkvozUlybku/cg/uv_end.jpg"
+    image cg uv_end = ts_cg('uv_end','jpg')
     #CG КОНЦОВКА ЛЕНА
-    image cg le_end = "/mods/SkvozUlybku/cg/le_end.jpg"
+    image cg le_end = ts_cg('le_end','jpg')
     #CG КОНЦОВКА ОКСАНЫ
-    image cg oxn_end = "/mods/SkvozUlybku/cg/konc_oxn.jpg"
+    image cg oxn_end = ts_cg('konc_oxn','jpg')
     #CG КОНЦОВКА СЛАВЯ
-    image cg sla_end = "/mods/SkvozUlybku/cg/konc_sla.jpg"
+    image cg sla_end = ts_cg('konc_sla','jpg')
     #CG  ПЛОХАЯ КОНЦОВКА
     image cg bad_end = "/mods/SkvozUlybku/cg/bad_end.jpg"
     #CG  КОНЦОВКА ЖЕНИ
-    image cg jen_end = "/mods/SkvozUlybku/cg/mz_final.jpg"
+    image cg jen_end = ts_cg('mz_final','jpg')
 
     #ПОЛЯНКА
     image bg ext_clearing_day = "/mods/SkvozUlybku/bg/lager/polianka.jpg"
@@ -617,13 +635,13 @@ init:
     image ext_square_dance_off = "/mods/SkvozUlybku/bg/lager/Square_dance2.jpg"
 
     #CG КОСТЁР 
-    image cg campfire = "/mods/SkvozUlybku/cg/campfire.jpg"
-    #CG ОСТРОВ 
+    image cg campfire = ts_cg('campfire','jpg')
+    #CG ОСТРОВ
     image cg island = "/mods/SkvozUlybku/cg/island.jpg"
     #СЕМЁН КАЧОК СМОТРИТ В ЗЕРКАЛО
-    image cg mirror_kachok = "/mods/SkvozUlybku/cg/Mirror_kachok.jpg"
+    image cg mirror_kachok = ts_cg('Mirror_kachok','jpg')
     #ПЕСЧАНЫЙ ЗАМОК
-    image cg sand_castle = "/mods/SkvozUlybku/cg/sand_castle.jpg"
+    image cg sand_castle = ts_cg('sand_castle','jpg')
     #СЛАВЯ В ДУШЕ
     image cg slavya_dush = "/mods/SkvozUlybku/cg/Slavya_dush.jpg"
     #ЗВУК ДУША
@@ -637,9 +655,9 @@ init:
     #ОЗЕРО
     image ozero = "/mods/SkvozUlybku/bg/lager/Ozero.jpg"
     #СЛАВЯ И МАКСИМ СТАВЯТ ПАЛАТКУ
-    image Slavya_and_Maxim_set_up_tent = "/mods/SkvozUlybku/cg/Slavya_and_Maxim_set_up_tent.png"
+    image Slavya_and_Maxim_set_up_tent = ts_cg('Slavya_and_Maxim_set_up_tent','png')
     #CG ВЛАСТЬ РЫЖИМ 
-    image cg rizgim = "/mods/SkvozUlybku/cg/rizgim.jpg"
+    image cg rizgim = ts_cg('rizgim','jpg')
 
     #Первый день. Пролог №1б
     

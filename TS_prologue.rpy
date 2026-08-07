@@ -1,4 +1,4 @@
-label TS_prologday1:
+label TS_prologday1_play:
     menu:
         "Кому накрутить лавпоинты?"
         "Славя":
