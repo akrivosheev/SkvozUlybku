@@ -50,7 +50,7 @@ init -10 python:
 
 screen ts_main_menu():
 
-    add "mods/SkvozUlybku/cg/cg-neiro/menu.png" xysize (config.screen_width, config.screen_height)
+    add "mods/SkvozUlybku/cg/cg-neiro/menu.png" size (config.screen_width, config.screen_height)
 
     # Стенгазета на стене ("Вестник Совенка", верхний правый угол) — наводишь курсор, всплывает анекдот
     button:
