@@ -516,8 +516,6 @@ init:
     #НОЧНЫЕ СНАЙПЕРЫ
     $ zh_theme = "/mods/SkvozUlybku/sound/music/zh_theme.mp3"
     #СНОВА ЭТОТ СОН
-    $ snovason = "/mods/SkvozUlybku/sound/music/snovason.mp3"
-    #СНОВА ЭТОТ СОН
     $ radosten = "/mods/SkvozUlybku/sound/music/radosten.mp3"
     #Space_Song
     $ space_song = "/mods/SkvozUlybku/sound/music/space_song.mp3"
