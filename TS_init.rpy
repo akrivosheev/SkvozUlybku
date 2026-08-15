@@ -74,6 +74,8 @@ init:
 
     #АЙ ОФ Э ТАЙГЕР
     $ kachok_m = "/mods/SkvozUlybku/sound/music/Kachok.mp3"
+    #312
+    $ alice_312 = "/mods/SkvozUlybku/sound/music/312.mp3"
     #РИНГТОН ЛЕНЫ
     $ phone_lena = "/mods/SkvozUlybku/sound/sfx/phone_lena.mp3"
     #Caravan_Palace
