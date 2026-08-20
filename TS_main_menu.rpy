@@ -3,6 +3,15 @@ default persistent.ts_enable_censorship = True
 default persistent.ts_enable_neuro = False
 default ts_now_playing = None
 
+# ДОСТИЖЕНИЯ — persistent.ts_achievements_unlocked хранит, какие концовки
+# вообще были получены (когда-либо, в любом прохождении). persistent.
+# ts_achievements_seen хранит, для каких из них уже показывали всплывающее
+# окно. ts_achievement_queue — очередь окон, которые нужно показать в этом
+# сеансе прямо сейчас (не сохраняется, сбрасывается при перезапуске).
+default persistent.ts_achievements_unlocked = {}
+default persistent.ts_achievements_seen = {}
+default ts_achievement_queue = []
+
 init -10 python:
 
     # ЛОК. СТЕНГАЗЕТА — картинки-анекдоты, выбираются случайно при наведении
@@ -119,6 +128,48 @@ init -10 python:
         slot = renpy.newest_slot()
         if slot:
             renpy.load(slot)
+
+    # ДОСТИЖЕНИЯ — за концовки мода.
+    # Формат: (id, отображаемый текст). id должен совпадать с тем, что передаётся
+    # в ts_unlock_achievement() в TS_day4.rpy — его менять нельзя. Текст (вторая
+    # строка) можно свободно переписывать.
+    ts_achievements = [
+        ("us_end", "Power to the Redheads"),
+        ("uv_end", "Family is the Most Important Thing"),
+        ("jen_end", "Brothers Forever"),
+        ("le_end", "Like the Good Old Days"),
+        ("oxn_end", "From a Clean Slate"),
+        ("sla_end", "The Greatest Secret of the Universe"),
+    ]
+    ts_achievement_titles = dict(ts_achievements)
+
+    def ts_unlock_achievement(ach_id):
+        # Вызывается прямо в сцене концовки. Ничего не показывает сразу (чтобы
+        # не портить финальные титры) — только запоминает факт получения.
+        unlocked = persistent.ts_achievements_unlocked or {}
+        unlocked[ach_id] = True
+        persistent.ts_achievements_unlocked = unlocked
+
+    def ts_queue_pending_achievements():
+        # Вызывается на входе в "город" (TS_gorod_day_2, TS_tri_day_gorod,
+        # TS_day4_morning). Ставит в очередь все полученные, но ещё не
+        # показанные ачивки — по одной, всплывающим окном.
+        unlocked = persistent.ts_achievements_unlocked or {}
+        seen = persistent.ts_achievements_seen or {}
+        changed = False
+        for ach_id, _title in ts_achievements:
+            if unlocked.get(ach_id) and not seen.get(ach_id):
+                ts_achievement_queue.append(ach_id)
+                seen[ach_id] = True
+                changed = True
+        if changed:
+            persistent.ts_achievements_seen = seen
+
+    def ts_achievement_pop():
+        if ts_achievement_queue:
+            ts_achievement_queue.pop(0)
+
+    config.overlay_screens.append("ts_achievement_toast")
 
     # ЦЕНЗУРА — листик поверх открытых мест
     def ts_leaf(size):
@@ -406,6 +457,30 @@ screen ts_playlist():
                     text_color "#ffffff"
                     text_hover_color "#e0ff00"
                     action Hide("ts_playlist")
+
+
+screen ts_achievement_toast():
+    zorder 90
+
+    if ts_achievement_queue:
+        $ ts_ach_id = ts_achievement_queue[0]
+        $ ts_ach_title = ts_achievement_titles.get(ts_ach_id, ts_ach_id)
+
+        frame:
+            xalign 0.5
+            ypos 40
+            padding (24, 16)
+            background "#111111e6"
+
+            hbox:
+                spacing 14
+                text "🏆" size 34 color "#e0ff00"
+                vbox:
+                    spacing 2
+                    text "Достижение открыто" size 16 color "#aaaaaa"
+                    text ts_ach_title size 24 color "#ffffff"
+
+        timer 3.5 action Function(ts_achievement_pop)
 
 
 label TS_prologday1:

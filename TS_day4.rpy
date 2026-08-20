@@ -1,4 +1,5 @@
 label TS_day4_morning:
+    $ ts_queue_pending_achievements()
     $ prolog_time()
     $ persistent.sprite_time = "day"
     $ save_name = ('Сквозь улыбку\nГород. День четвёртый')
@@ -4382,6 +4383,7 @@ label TS_day4_lager_morning:
 
                 play music konec_oxn fadein 1
                 window hide
+                $ ts_unlock_achievement("oxn_end")
                 scene cg oxn_end with dissolve
     
                 show credits TS_credits:
@@ -5092,6 +5094,7 @@ label TS_day4_lager_morning:
                 "А вот почему я ей понравился — величайшая тайна вселенной."
 
                 window hide
+                $ ts_unlock_achievement("sla_end")
                 scene cg sla_end with dissolve
 
                 show credits TS_credits:
@@ -5646,6 +5649,7 @@ label TS_day4_lager_morning:
                 play music dlinnohvost fadein 1
 
                 window hide
+                $ ts_unlock_achievement("le_end")
                 scene cg le_end with dissolve
 
                 show credits TS_credits:
@@ -5807,6 +5811,7 @@ label TS_us_end:
     gg "Нам можно. Мы, рыжие, должны держаться вместе."
     play music Believe_In_You fadein 1
     scene black with dissolve
+    $ ts_unlock_achievement("us_end")
     scene cg rizgim with dissolve
 
     window hide
@@ -5920,6 +5925,7 @@ label TS_uv_end:
     "Юля замахнулась на меня тапком, а я изобразил панической бегство…"
     gg "Караул! Юлька взбесилась!"
     window hide
+    $ ts_unlock_achievement("uv_end")
     scene cg uv_end with dissolve
     show credits TS_credits:
         xalign 0.5
@@ -6070,6 +6076,7 @@ label TS_jen_end:
     "Думаю, такое её устроит."
     nvl clear
 
+    $ ts_unlock_achievement("jen_end")
     scene cg jen_end with dissolve
     show credits TS_credits:
         xalign 0.5

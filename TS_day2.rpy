@@ -1,4 +1,5 @@
 label TS_gorod_day_2:
+    $ ts_queue_pending_achievements()
     $ prolog_time()
     $ save_name = ('Город. День второй')
     play music space_song fadein 1
@@ -2873,6 +2874,7 @@ label TS_start:
     "..."
 
 label TS_tri_day_gorod:
+    $ ts_queue_pending_achievements()
     $ prolog_time()
     $ save_name = ('Город. День третий')
     scene kvartura_up
