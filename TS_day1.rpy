@@ -1341,9 +1341,8 @@ label TS_dining_hall_scene:
 
         sl "Вшестером.{w} Ещё Саша и Серёжа."
 
-        show el normal body at fright
-        show sh normal body at right
-        with dissolve
+        show kib el_norm at fright with dspr
+        show kib sh_norm at right with dspr
 
         sh "Привет."
         el "Привет."
@@ -1354,12 +1353,12 @@ label TS_dining_hall_scene:
         sl "Давайте новички будут капитанами.{w} Юля, Макс - выбирайте игроков."
         gg "Я выбираю… Шурика! Раз уж он такой крутой."
 
-        show sh surprise pioneer with dspr
+        show kib sh_sur with dspr
 
         sh "Я вовсе не…"
         uv "Я выбираю Сергея."
 
-        show el upset pioneer with dspr
+        show kib el_sur with dspr
 
         el "Но я же… Так не честно!"
         sl "Всё честно. Макс? Кого выберешь?"
@@ -1380,8 +1379,8 @@ label TS_dining_hall_scene:
         
         show sl smile sport
         show un sad swim
-        show el normal pioneer
-        show sh normal pioneer
+        show kib el_norm
+        show kib sh_norm
         with dissolve
         
         uv "Отлично.{w} А я выбираю Лену. {w}Как называется ваша команда, Максик?"
@@ -1395,10 +1394,6 @@ label TS_dining_hall_scene:
         
         gg "\"Домино\"."
         uv "Какое глупое название. {w}А мы будем называться… \"импульсы\". Как вам?"
-        
-        show sl laugh sport
-        show el smile pioneer
-        with dspr
         
         sl "Бодренькое."
         el "Физическое. А мы импульсы силы или импульсы массы?"
@@ -1426,8 +1421,8 @@ label TS_dining_hall_scene:
         show sl smile sport at center
         show un smile sport at cright
         show uv pioneer_smile at cleft
-        show sh smile pioneer at fleft
-        show el smile pioneer at fright
+        show kib el_norm at fright
+        show kib sh_norm at fleft
         with dissolve
 
         window show
@@ -1480,8 +1475,6 @@ label TS_dining_hall_scene:
         uv "Какое глупое название. А мы будем называться… \"импульсы\". Как вам?"
         
         show un smile2 swim
-        show el smile pioneer
-        with dissolve
         
         sl "Миленькое."
         el "Физическое. А мы импульсы силы или импульсы массы?"
@@ -1506,8 +1499,8 @@ label TS_dining_hall_scene:
         show sl smile sport at center
         show un smile sport at cright
         show uv pioneer_smile at cleft
-        show sh smile pioneer at fleft
-        show el smile pioneer at fright
+        show kib el_norm at fright
+        show kib sh_norm at fleft
         with dissolve
 
         "Мы проиграли с разгромным счётом 10:3. Потом поменялись сторонами и проиграли 10:7."
@@ -1517,7 +1510,7 @@ label TS_dining_hall_scene:
         un "Всё. Я устала. Давайте заканчивать."
         sl "Согласна. К тому же скоро ужин. Надо ещё успеть помыться."
         
-        show el upset pioneer with dspr
+        show kib el_sur with dspr
         
         el "Я уже сегодня мылся."
         
@@ -1549,8 +1542,8 @@ label TS_dining_hall_scene:
         show sl normal sport at center
         show un normal sport at cright
         show uv pioneer_smile at cleft
-        show sh normal pioneer at fleft
-        show el normal pioneer at fright
+        show kib el_norm at fright
+        show kib sh_norm at fleft
         with dissolve
 
         window show
@@ -1603,7 +1596,7 @@ label TS_dining_hall_scene:
         window hide
 
         scene bg ext_path_day with dissolve
-        $ renpy.pause(0.25)
+        $ renpy.pause(0.75)
         scene bg ext_dining_hall_away_day with dissolve
         
         window show

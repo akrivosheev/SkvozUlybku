@@ -114,6 +114,12 @@ init:
     image al alisa_smile = "/mods/SkvozUlybku/image/sprite/al/alisa_smile.png"
     image al alisa_laugh = "/mods/SkvozUlybku/image/sprite/al/alisa_laugh.png"
     image al alisa_sad = "/mods/SkvozUlybku/image/sprite/al/alisa_sad.png"
+
+    #КИБЕРНЕТИКИ
+    image kib el_norm = "/mods/SkvozUlybku/image/sprite/kib/el_norm.png"
+    image kib el_sur = "mods/SkvozUlybku/image/sprite/kib/el_sur.png"
+    image kib sh_norm = "/mods/SkvozUlybku/image/sprite/kib/sh_norm.png"
+    image kib sh_sur = "/mods/SkvozUlybku/image/sprite/kib/sh_sur.png"
     
     #ЛЕНА
     image le_1_strog = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le1_strog.png", 1)
