@@ -1341,8 +1341,9 @@ label TS_dining_hall_scene:
 
         sl "Вшестером.{w} Ещё Саша и Серёжа."
 
-        show kib el_norm at fright with dspr
-        show kib sh_norm at right with dspr
+        # Показываем обоих спрайтов одновременно
+        show el el_norm at fright with dspr
+        show sh sh_norm at right with dspr
 
         sh "Привет."
         el "Привет."
@@ -1353,12 +1354,12 @@ label TS_dining_hall_scene:
         sl "Давайте новички будут капитанами.{w} Юля, Макс - выбирайте игроков."
         gg "Я выбираю… Шурика! Раз уж он такой крутой."
 
-        show kib sh_sur with dspr
+        show sh sh_sur with dspr
 
         sh "Я вовсе не…"
         uv "Я выбираю Сергея."
 
-        show kib el_sur with dspr
+        show el el_sur with dspr
 
         el "Но я же… Так не честно!"
         sl "Всё честно. Макс? Кого выберешь?"
@@ -1421,8 +1422,8 @@ label TS_dining_hall_scene:
         show sl smile sport at center
         show un smile sport at cright
         show uv pioneer_smile at cleft
-        show kib el_norm at fright
-        show kib sh_norm at fleft
+        show el el_norm at fright
+        show sh sh_norm at fleft
         with dissolve
 
         window show
@@ -1433,7 +1434,7 @@ label TS_dining_hall_scene:
         un "Всё. Я устала. Давайте заканчивать."
         sl "Согласна. К тому же скоро ужин. Надо ещё успеть помыться."
         
-        show el upset pioneer with dspr
+        show el el_sur with dspr
         
         el "Я уже сегодня мылся."
         
@@ -1499,8 +1500,8 @@ label TS_dining_hall_scene:
         show sl smile sport at center
         show un smile sport at cright
         show uv pioneer_smile at cleft
-        show kib el_norm at fright
-        show kib sh_norm at fleft
+        show el el_norm at fright
+        show sh sh_norm at fleft
         with dissolve
 
         "Мы проиграли с разгромным счётом 10:3. Потом поменялись сторонами и проиграли 10:7."
@@ -1510,7 +1511,7 @@ label TS_dining_hall_scene:
         un "Всё. Я устала. Давайте заканчивать."
         sl "Согласна. К тому же скоро ужин. Надо ещё успеть помыться."
         
-        show kib el_sur with dspr
+        show el el_sur with dspr
         
         el "Я уже сегодня мылся."
         
@@ -1542,8 +1543,8 @@ label TS_dining_hall_scene:
         show sl normal sport at center
         show un normal sport at cright
         show uv pioneer_smile at cleft
-        show kib el_norm at fright
-        show kib sh_norm at fleft
+        show el el_norm at fright
+        show sh sh_norm at fleft
         with dissolve
 
         window show

@@ -60,26 +60,23 @@ label TS_prologday1_play:
     $ set_mode_adv()
     pr "Эй, пацанчик. Есть закурить?"
     play music gopnik_theme fadein 2
-    show sinyak_angry with Dissolve(10)
+    show si sinyak_angry with dspr
     "Я обернулся на голос и увидел знакомого синяка. Он был всего на 5 лет старше меня, но выглядел на сорокет."
-    hide sinyak_angry with Dissolve(10)
-    show sinyak_smile with Dissolve(10)
+    show si sinyak_smile
     pr "А-а-а… это ты, Макс, не узнал. Хех. Богатым будешь!"
     gg "Привет, Сизый. Хорошо бы."
-    hide sinyak_smile with Dissolve(10)
-    show sinyak with Dissolve(10)
+    show si sinyak with Dissolve(10)
     pr "А что это у тебя? Новая куртка?"
     gg "Наоборот. Старая. Батина."
     pr "О, кстати! Как батя-то? Всё ещё чалится?"
     gg "Ага"
     pr "И долго ему ещё?"
     gg "Минимум два года."
-    hide sinyak with Dissolve(10)
-    show sinyak_smile with Dissolve(10)
+    show si sinyak_smile
     pr "Хуёво! Ну два - не двадцать. Хех… Кхе-кхе"
     gg "Ладно, я в хабзу попиздовал."
     pr "Пиздуй, пиздуй."
-    hide sinyak_smile 
+    hide si 
     "Что я и сделал"
     play music Through_the_Breach fadein 2
     th "Не, у нас, на самом деле, много хорошего. Вон, например, стоит симпатичная девушка."

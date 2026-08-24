@@ -67,10 +67,10 @@ init:
     #ТЯНКАА
     image tyan = "/mods/SkvozUlybku/image/sprite/walk/tyan.png"
     #СИНЯК
-    image sinyak = "/mods/SkvozUlybku/image/sprite/walk/gopnik_norm.png"
-    image sinyak_angry = "/mods/SkvozUlybku/image/sprite/walk/gopnik_angry.png"
-    image sinyak_smile = "/mods/SkvozUlybku/image/sprite/walk/gopnik_smile.png"
-    image sinyak_scare = "/mods/SkvozUlybku/image/sprite/walk/gopnik_scare.png"
+    image si sinyak = "/mods/SkvozUlybku/image/sprite/walk/gopnik_norm.png"
+    image si sinyak_angry = "/mods/SkvozUlybku/image/sprite/walk/gopnik_angry.png"
+    image si sinyak_smile = "/mods/SkvozUlybku/image/sprite/walk/gopnik_smile.png"
+    image si sinyak_scare = "/mods/SkvozUlybku/image/sprite/walk/gopnik_scare.png"
 
     #АЙ ОФ Э ТАЙГЕР
     $ kachok_m = "/mods/SkvozUlybku/sound/music/Kachok.mp3"
@@ -116,10 +116,10 @@ init:
     image al alisa_sad = "/mods/SkvozUlybku/image/sprite/al/alisa_sad.png"
 
     #КИБЕРНЕТИКИ
-    image kib el_norm = "/mods/SkvozUlybku/image/sprite/kib/el_norm.png"
-    image kib el_sur = "mods/SkvozUlybku/image/sprite/kib/el_sur.png"
-    image kib sh_norm = "/mods/SkvozUlybku/image/sprite/kib/sh_norm.png"
-    image kib sh_sur = "/mods/SkvozUlybku/image/sprite/kib/sh_sur.png"
+    image el el_norm = "/mods/SkvozUlybku/image/sprite/kib/el_norm.png"
+    image el el_sur = "mods/SkvozUlybku/image/sprite/kib/el_sur.png"
+    image sh sh_norm = "/mods/SkvozUlybku/image/sprite/kib/sh_norm.png"
+    image sh sh_sur = "/mods/SkvozUlybku/image/sprite/kib/sh_sur.png"
     
     #ЛЕНА
     image le_1_strog = im.FactorScale("/mods/SkvozUlybku/image/sprite/le/le1_strog.png", 1)
@@ -276,19 +276,19 @@ init:
     image uv cat_smile = "/mods/SkvozUlybku/image/sprite/uv/cat_uv_smile.png"
     image uv cat_laugh = "/mods/SkvozUlybku/image/sprite/uv/cat_uv_laugh.png"
     image uv nake_angry = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_angry.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_angry.png", (900, 1080), [(315, 655), (420, 648)], 170),
         True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_angry.png" )
     image uv nake_angry3 = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_angry3.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_angry3.png", (900, 1080), [(315, 680), (420, 683)], 170),
         True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_angry3.png" )
     image uv nake_laugh = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_laugh.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_laugh.png", (900, 1080), [(315, 680), (420, 683)], 170),
         True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_laugh.png" )
     image uv nake_smile = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_smile.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_smile.png", (900, 1080), [(315, 680), (420, 683)], 170),
         True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_smile.png" )
     image uv nake_sur = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_sur.png", (900, 1080), [(315, 650), (420, 643)], 170),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/uv/nake_uv_sur.png", (900, 1080), [(315, 680), (420, 683)], 170),
         True, "mods/SkvozUlybku/image/sprite/uv/nake_uv_sur.png" )
     image uv sport_smile = "/mods/SkvozUlybku/image/sprite/uv/sport_smile.png"
     image uv sport_laugh = "/mods/SkvozUlybku/image/sprite/uv/sport_laugh.png"
@@ -330,16 +330,16 @@ init:
     image sl modern_shy = "/mods/SkvozUlybku/image/sprite/sl/sl_modern_shy.png"
     
     image sl body_shy = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_shy.png", (1125, 1080), [(515, 635)], 190),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_shy.png", (1125, 1080), [(515, 655)], 190),
         True, "mods/SkvozUlybku/image/sprite/sl/sl_body_shy.png" )
     image sl body_smile = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_smile.png", (1125, 1080), [(325, 620), (510, 605)], 190),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_smile.png", (1125, 1080), [(325, 630), (510, 635)], 190),
         True, "mods/SkvozUlybku/image/sprite/sl/sl_body_smile.png" )
     image sl body_unsmile = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_unsmile.png", (1125, 1080), [(325, 620), (510, 605)], 190),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_unsmile.png", (1125, 1080), [(325, 630), (510, 635)], 190),
         True, "mods/SkvozUlybku/image/sprite/sl/sl_body_unsmile.png" )
     image sl body_laught = ConditionSwitch(
-        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_laught.png", (1125, 1080), [(515, 635)], 190),
+        "persistent.ts_enable_censorship", ts_censor("mods/SkvozUlybku/image/sprite/sl/sl_body_laught.png", (1125, 1080), [(515, 655)], 190),
         True, "mods/SkvozUlybku/image/sprite/sl/sl_body_laught.png" )
 
     #СОКУРСНИК
