@@ -5481,7 +5481,7 @@ label TS_day4_lager_morning:
                 "Издательству или телекомпании."
                 "Слышал много историй, как авторов кидали на деньги."
 
-                show sinyak_smile at truecenter:
+                show si sinyak_smile at truecenter:
                     yalign 1.0
                     zoom 1.4
                 with dissolve
@@ -5491,7 +5491,7 @@ label TS_day4_lager_morning:
                 gg "Мой батя?"
                 pr "Ну не мой же! Хех! Ну бывай…"
 
-                hide sinyak with dissolve
+                hide si sinyak with dissolve
 
                 th "Этот мир всё страннее и страннее."
                 th "Подумать только: Сизый устроился на работу."
